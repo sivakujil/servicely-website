@@ -1,95 +1,67 @@
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import servicelyLogo from '../assets/logo.png'
-import './Navbar.css'
+import { ArrowRight, Menu, X } from "lucide-react";
+import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 
-function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const location = useLocation()
+import "./Navbar.css";
 
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'How It Works', path: '/how-it-works' },
-    { name: 'Services', path: '/services' },
-    { name: 'For Customers', path: '/for-customers' },
-    { name: 'For Providers', path: '/for-providers' },
-    { name: 'Contact', path: '/contact' },
-  ]
+const links = [
+  ["/", "Home"],
+  ["/how-it-works", "How It Works"],
+  ["/for-customer", "For Customer"],
+  ["/for-provider", "For Provider"],
+  ["/services", "Services"],
+  ["/contact", "Contact"],
+];
 
-  const isActive = (path) => {
-    if (path === '/') return location.pathname === '/'
-    if (path.includes('#')) return false
-    return location.pathname === path
-  }
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <header className="navbar">
-      <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          <img src={servicelyLogo} alt="Servicely" className="logo-img" />
-          <div className="logo-text">
-            <h1>Servicely</h1>
-            <p>Simple. Fast. Reliable.</p>
-          </div>
-        </Link>
-
-        <nav className="navbar-menu">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={`nav-link ${isActive(link.path) ? 'active' : ''}`}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
-
-        <Link to="/contact" className="navbar-cta">
-          Book a Service →
-        </Link>
+      <div className="nav-inner">
 
         <button
-          className="navbar-hamburger"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu"
+          className="brand"
+          onClick={() => navigate("/")}
+          aria-label="Servicely home"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <img
+            src="/src/assets/logo.png"
+            alt="Servicely"
+            className="brand-logo"
+          />
+          <span>Servicely</span>
         </button>
-      </div>
 
-      <div className={`mobile-drawer ${menuOpen ? 'open' : ''}`}>
-        <div className="mobile-drawer-header">
-          <div className="navbar-logo">
-            <img src={servicelyLogo} alt="Servicely" className="logo-img" />
-            <div className="logo-text">
-              <h1>Servicely</h1>
-            </div>
-          </div>
-          <button className="close-btn" onClick={() => setMenuOpen(false)}>✕</button>
-        </div>
-        <nav className="mobile-menu">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={`mobile-link ${isActive(link.path) ? 'active' : ''}`}
-              onClick={() => setMenuOpen(false)}
+        <nav className={`nav-links ${open ? "open" : ""}`}>
+          {links.map(([to, label]) => (
+            <NavLink
+              key={to}
+              to={to}
+              onClick={() => setOpen(false)}
             >
-              {link.name}
-            </Link>
+              {label}
+            </NavLink>
           ))}
-          <Link to="/contact" className="mobile-cta" onClick={() => setMenuOpen(false)}>
-            Book a Service →
-          </Link>
         </nav>
+
+        <button
+          className="nav-cta"
+          onClick={() => navigate("/services")}
+        >
+          Get Started
+          <ArrowRight size={17} />
+        </button>
+
+        <button
+          className="menu-btn"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+
       </div>
-
-      {menuOpen && <div className="drawer-overlay" onClick={() => setMenuOpen(false)}></div>}
     </header>
-  )
+  );
 }
-
-export default Navbar

@@ -1,9 +1,67 @@
-.app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
 }
 
-main {
-  flex: 1;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: #f7fbff;
+  color: #0b1426;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+section {
+  box-sizing: border-box;
+}
+
+.eyebrow {
+  display: inline-block;
+  background: #eaf3ff;
+  color: #3268d5;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+.primary,
+.secondary,
+.white-btn {
+  border: 0;
+  border-radius: 9px;
+  padding: 15px 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+}
+
+.primary {
+  background: #2f63dc;
+  color: #fff;
+  box-shadow: 0 9px 20px #2f63dc30;
+}
+
+.secondary {
+  background: #fff;
+  color: #2f63dc;
+  border: 1px solid #d9e4f4;
+}
+
+.white-btn {
+  background: #fff;
+  color: #2860d8;
 }

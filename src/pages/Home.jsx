@@ -1,150 +1,103 @@
 import {
   ArrowRight,
-  Search,
-  CheckCircle2,
+  ShieldCheck,
+  Clock3,
+  CreditCard,
   Wrench,
   Zap,
   Wind,
-  Sparkles,
-  Paintbrush,
-  Refrigerator,
-  Users,
-  ClipboardCheck,
-  BriefcaseBusiness,
-  Check,
-  Star,
 } from "lucide-react";
+
+import { useNavigate } from "react-router-dom";
+
+import Footer from "../components/Footer";
+
 import "./Home.css";
 
-function Home() {
-  const services = [
-    {
-      icon: <Wrench size={24} />,
-      title: "Plumbing",
-      text: "Professional plumbing services for your home.",
-      className: "blue",
-    },
-    {
-      icon: <Zap size={24} />,
-      title: "Electrical",
-      text: "Reliable electrical experts whenever you need.",
-      className: "yellow",
-    },
-    {
-      icon: <Wind size={24} />,
-      title: "AC Repair",
-      text: "Fast and professional AC repair services.",
-      className: "cyan",
-    },
-    {
-      icon: <Sparkles size={24} />,
-      title: "Cleaning",
-      text: "Trusted cleaning professionals for every space.",
-      className: "green",
-    },
-    {
-      icon: <Paintbrush size={24} />,
-      title: "Painting",
-      text: "Interior, exterior and texture painting services.",
-      className: "purple",
-    },
-    {
-      icon: <Refrigerator size={24} />,
-      title: "Appliance Repair",
-      text: "Repair washing machines, fridges, ovens and more.",
-      className: "red",
-    },
-  ];
+const services = [
+  [
+    "Plumbing",
+    "Leak repairs, pipe installation & drain",
+    Wrench,
+  ],
+  [
+    "Electrical",
+    "Wiring, upgrades & safety inspections",
+    Zap,
+  ],
+  [
+    "AC Repair",
+    "Installation, servicing & gas recharging",
+    Wind,
+  ],
+];
 
-  const steps = [
-    {
-      icon: <Search size={20} />,
-      title: "Choose a Service",
-      className: "blue",
-    },
-    {
-      icon: <ClipboardCheck size={20} />,
-      title: "Create a Request",
-      className: "yellow",
-    },
-    {
-      icon: <Users size={20} />,
-      title: "Find a Service Provider",
-      className: "cyan",
-    },
-    {
-      icon: <Check size={20} />,
-      title: "Provider Accepts",
-      className: "green",
-    },
-    {
-      icon: <Wrench size={20} />,
-      title: "Service Starts",
-      className: "purple",
-    },
-    {
-      icon: <CheckCircle2 size={20} />,
-      title: "Service Completed",
-      className: "blue",
-    },
-    {
-      icon: <Star size={20} />,
-      title: "Payment & Review",
-      className: "yellow",
-    },
-  ];
+export default function Home() {
+
+  const nav = useNavigate();
 
   return (
-    <main className="home-page">
+    <div>
 
-      {/* ================= HERO ================= */}
+      <main className="home">
 
-      <section className="home-hero">
-        <div className="home-container hero-grid">
+        {/* HERO */}
 
-          <div className="hero-content">
+        <section className="hero">
 
-            <div className="hero-badge">
-              <CheckCircle2 size={16} />
+          <div className="hero-copy">
+
+            <span className="eyebrow">
               TRUSTED BY 12,000+ CUSTOMERS
-            </div>
+            </span>
 
             <h1>
               Your Service.
+              <br />
               <span>Just One Click</span>
+              <br />
               Away.
             </h1>
 
             <p>
-              Find trusted professionals and get your work done easily.
-              Book in minutes, track in real-time, pay securely.
+              Find trusted professionals and get your work
+              done easily. Book in minutes, track in real-time,
+              pay securely.
             </p>
 
-            <div className="hero-buttons">
-              <button className="primary-btn">
+            <div className="hero-actions">
+
+              <button
+                className="primary"
+                onClick={() => nav("/services")}
+              >
                 Book a Service
-                <ArrowRight size={20} />
+                <ArrowRight size={17} />
               </button>
 
-              <button className="secondary-btn">
+              <button
+                className="secondary"
+                onClick={() => nav("/for-provider")}
+              >
                 Become a Provider
               </button>
+
             </div>
 
-            <div className="hero-stats">
+            <div className="stats">
 
               <div>
-                <strong>12K+</strong>
+                <b>12K+</b>
                 <span>Happy Customers</span>
               </div>
 
               <div>
-                <strong>850+</strong>
+                <b>850+</b>
                 <span>Verified Providers</span>
               </div>
 
               <div>
-                <strong>4.9★</strong>
+                <b>4.9</b>
                 <span>Average Rating</span>
               </div>
 
@@ -152,382 +105,215 @@ function Home() {
 
           </div>
 
-          {/* ================= PHONE MOCKUP ================= */}
+          <div className="hero-visual">
 
-          <div className="phone-area">
+            <div className="request-card">
 
-            <div className="phone-glow"></div>
+              <span className="small-icon">
+                ✓
+              </span>
+
+              <b>Book a Service</b>
+
+              <p>
+                Choose a trusted professional
+                for your needs.
+              </p>
+
+              <button
+                onClick={() => nav("/services")}
+              >
+                Get Started
+                <ArrowRight size={14} />
+              </button>
+
+            </div>
 
             <div className="phone">
 
-              <div className="phone-top">
-                <span>9:41</span>
-                <div className="dynamic-island"></div>
-                <span>●●</span>
+              <div className="phone-top"></div>
+
+              <strong>My Jobs</strong>
+
+              <div className="job active">
+                AC Repair
+                <small>
+                  Today • 10:00 AM
+                </small>
               </div>
 
-              <div className="phone-header">
-                <div>
-                  <small>Good morning 👋</small>
-                  <h4>Book a Service</h4>
-                </div>
-
-                <div className="notification">
-                  ♧
-                </div>
+              <div className="job">
+                Plumbing
+                <small>
+                  Tomorrow
+                </small>
               </div>
 
-              <div className="phone-search">
-                <Search size={14} />
-                <span>Search services...</span>
+              <div className="job done">
+                Painting
+                <small>
+                  Completed
+                </small>
               </div>
 
-              <div className="book-card">
-                <div>
-                  <small>Need help?</small>
-                  <strong>Book a Service</strong>
-                  <button>
-                    Book <ArrowRight size={11} />
-                  </button>
-                </div>
-
-                <div className="book-circle"></div>
-              </div>
-
-              <h5 className="phone-title">Services</h5>
-
-              <div className="phone-services">
-
-                <div>
-                  <span>♢</span>
-                  <small>Plumbing</small>
-                </div>
-
-                <div>
-                  <span>ϟ</span>
-                  <small>Electrical</small>
-                </div>
-
-                <div>
-                  <span>≋</span>
-                  <small>AC Repair</small>
-                </div>
-
-                <div>
-                  <span>⌁</span>
-                  <small>Cleaning</small>
-                </div>
-
-                <div>
-                  <span>✧</span>
-                  <small>Painting</small>
-                </div>
-
-                <div>
-                  <span>⊞</span>
-                  <small>Appliance</small>
-                </div>
-
-              </div>
-
-              <div className="phone-job">
-                <div>
-                  <strong>AC Repair Service</strong>
-                  <small>Today · 2:00 PM</small>
-                </div>
-
-                <span>In Progress</span>
-              </div>
-
-            </div>
-
-            {/* Floating Jobs Card */}
-
-            <div className="jobs-floating-card">
-              <div className="jobs-check">
-                <Check size={20} />
-              </div>
-
-              <div>
-                <strong>4,200+</strong>
-                <span>Jobs Done</span>
-              </div>
             </div>
 
           </div>
 
-        </div>
-      </section>
+        </section>
 
-      {/* ================= SERVICES ================= */}
+        {/* SERVICES */}
 
-      <section className="services-section">
-
-        <div className="home-container">
+        <section className="offer section">
 
           <div className="section-heading">
-            <span>OUR SERVICES</span>
+
+            <span className="eyebrow">
+              OUR SERVICES
+            </span>
 
             <h2>
-              Everything You Need,
-              <br />
-              In One Place
+              What We Offer
             </h2>
 
             <p>
-              Whether you need a service or provide one,
-              Servicely has you covered.
+              Professional home and business services delivered by
+              <br />
+              verified, vetted technicians.
             </p>
-          </div>
-
-          <div className="services-grid">
-
-            {services.map((service, index) => (
-              <div className="service-card" key={index}>
-
-                <div className={`service-icon ${service.className}`}>
-                  {service.icon}
-                </div>
-
-                <h3>{service.title}</h3>
-
-                <p>{service.text}</p>
-
-                <button>
-                  Book Now
-                  <ArrowRight size={17} />
-                </button>
-
-              </div>
-            ))}
 
           </div>
 
-        </div>
+          <div className="service-cards">
 
-      </section>
+            {services.map(
+              ([name, text, Icon]) => (
 
-      {/* ================= SIMPLE PROCESS ================= */}
+                <article key={name}>
 
-      <section className="process-section">
+                  <span className="service-icon">
+                    <Icon />
+                  </span>
 
-        <div className="home-container">
+                  <h3>{name}</h3>
+
+                  <p>{text}</p>
+
+                </article>
+              )
+            )}
+
+          </div>
+
+        </section>
+
+        {/* TRUST */}
+
+        <section className="trust section">
 
           <div className="section-heading">
-            <span>SIMPLE PROCESS</span>
 
-            <h2>How Servicely Works</h2>
-
-            <p>
-              From booking to completion, we make every step simple.
-            </p>
-          </div>
-
-          <div className="process-grid">
-
-            {steps.map((step, index) => (
-              <div className="process-item" key={index}>
-
-                <div className={`process-icon ${step.className}`}>
-                  {step.icon}
-                </div>
-
-                <strong>{step.title}</strong>
-
-                {index !== steps.length - 1 && (
-                  <div className="process-line"></div>
-                )}
-
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ================= CUSTOMER / PROVIDER ================= */}
-
-      <section className="audience-section">
-
-        <div className="home-container">
-
-          <div className="audience-heading">
-            <span>BUILT FOR EVERYONE</span>
+            <span className="eyebrow">
+              WHY CHOOSE US
+            </span>
 
             <h2>
-              Simple for Customers.
-              <br />
-              Powerful for Providers.
+              Built on Trust & Transparency
             </h2>
 
             <p>
-              Whether you need a service or provide one,
-              Servicely has you covered.
+              Every step of the process is designed
+              to make you feel safe and informed.
             </p>
-          </div>
-
-          <div className="audience-grid">
-
-            <div className="customer-card">
-
-              <div className="audience-icon">
-                <Users size={25} />
-              </div>
-
-              <span>FOR CUSTOMERS</span>
-
-              <h3>Easy Booking</h3>
-
-              <div className="audience-list">
-
-                <div>
-                  <Search size={18} />
-                  <section>
-                    <strong>Select Service</strong>
-                    <p>Browse verified providers near you</p>
-                  </section>
-                </div>
-
-                <div>
-                  <ClipboardCheck size={18} />
-                  <section>
-                    <strong>Create Request</strong>
-                    <p>Schedule at your preferred time</p>
-                  </section>
-                </div>
-
-                <div>
-                  <Wrench size={18} />
-                  <section>
-                    <strong>Service</strong>
-                    <p>Professional arrives and works</p>
-                  </section>
-                </div>
-
-                <div>
-                  <CheckCircle2 size={18} />
-                  <section>
-                    <strong>Complete</strong>
-                    <p>Confirm satisfaction before pay</p>
-                  </section>
-                </div>
-
-                <div>
-                  <Star size={18} />
-                  <section>
-                    <strong>Feedback</strong>
-                    <p>Rate your experience & help others</p>
-                  </section>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div className="provider-card">
-
-              <div className="audience-icon provider-icon">
-                <BriefcaseBusiness size={25} />
-              </div>
-
-              <span>FOR PROVIDERS</span>
-
-              <h3>Grow Your Business</h3>
-
-              <div className="provider-list">
-
-                <div>
-                  <BriefcaseBusiness size={18} />
-                  <section>
-                    <strong>Receive Jobs</strong>
-                    <p>Get job requests from customers</p>
-                  </section>
-                </div>
-
-                <div>
-                  <Check size={18} />
-                  <section>
-                    <strong>Accept</strong>
-                    <p>Review and accept with one tap</p>
-                  </section>
-                </div>
-
-                <div>
-                  <Wrench size={18} />
-                  <section>
-                    <strong>Complete</strong>
-                    <p>Do the work, mark done in-app</p>
-                  </section>
-                </div>
-
-                <div>
-                  <BriefcaseBusiness size={18} />
-                  <section>
-                    <strong>Earn</strong>
-                    <p>Get paid instantly, track income</p>
-                  </section>
-                </div>
-
-              </div>
-
-              <div className="provider-bottom">
-                <div>
-                  <strong>Rs. 85K+</strong>
-                  <span>Avg. monthly earn</span>
-                </div>
-
-                <div>
-                  <strong>95%</strong>
-                  <span>Job acceptance rate</span>
-                </div>
-              </div>
-
-            </div>
 
           </div>
 
-        </div>
+          <div className="trust-grid">
 
-      </section>
+            <article>
 
-      {/* ================= CTA ================= */}
+              <ShieldCheck />
 
-      <section className="home-cta">
-
-        <div className="home-container">
-
-          <div className="cta-box">
-
-            <div>
-              <span>READY TO GET STARTED?</span>
-
-              <h2>
-                Your next service
-                <br />
-                is just one click away.
-              </h2>
+              <h3>
+                Verified Providers
+              </h3>
 
               <p>
-                Connect with trusted professionals and get your
-                work done quickly and securely.
+                Every service provider is
+                background-checked, ID-verified,
+                and skill-assessed before joining
+                the platform.
               </p>
-            </div>
 
-            <button>
-              Get Started
-              <ArrowRight size={19} />
-            </button>
+            </article>
+
+            <article>
+
+              <Clock3 />
+
+              <h3>
+                On-Time Guarantee
+              </h3>
+
+              <p>
+                Providers who miss appointments
+                without notice are penalised.
+                Your time is respected, always.
+              </p>
+
+            </article>
+
+            <article>
+
+              <CreditCard />
+
+              <h3>
+                Secure Payment
+              </h3>
+
+              <p>
+                Funds are only released to providers
+                after you confirm the job is complete.
+                Zero risk of fraud.
+              </p>
+
+            </article>
 
           </div>
 
-        </div>
+        </section>
 
-      </section>
+        {/* CTA */}
 
-    </main>
+        <section className="ready">
+
+          <div>
+
+            <h2>
+              Ready to experience it?
+            </h2>
+
+            <p>
+              Book your first service today
+              and see how simple it can be.
+            </p>
+
+          </div>
+
+          <button
+            className="white-btn"
+            onClick={() => nav("/services")}
+          >
+            Get Started
+            <ArrowRight size={15} />
+          </button>
+
+        </section>
+
+      </main>
+
+      <Footer />
+
+    </div>
   );
 }
-
-export default Home;
