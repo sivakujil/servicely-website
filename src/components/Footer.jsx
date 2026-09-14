@@ -1,67 +1,261 @@
-import { Phone, Mail } from "lucide-react";
+
+import React from "react";
 import { Link } from "react-router-dom";
+import {
+  MapPin,
+  Phone,
+  Mail,
+} from "lucide-react";
 import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="corporate-footer">
 
-      <div className="footer-main">
+      {/* ================= MAIN FOOTER ================= */}
+      <div className="footer-container">
 
-        {/* ABOUT */}
-        <div className="footer-about">
+        {/* ================= COMPANY INFO ================= */}
+        <div className="footer-company">
 
-          <div className="footer-brand">
-            <img
-              src="/src/assets/logo.png"
-              alt="Servicely"
-              className="footer-logo"
-            />
+          <Link to="/" className="footer-logo">
+            Servicely
+          </Link>
 
-            <b>Servicely</b>
-          </div>
-
-          <p>
-            Connecting trusted service
+          <p className="footer-tagline">
+            Engineering solutions for a
             <br />
-            professionals with customers across
-            <br />
-            Sri Lanka.
+            better and sustainable future.
           </p>
 
-          <a href="mailto:info@servicely.lk">
-            <Mail size={15} />
-            info@servicely.lk
-          </a>
+          <p className="footer-description">
+            Delivering reliable, innovative and
+            professional solutions across multiple
+            industries with quality and integrity.
+          </p>
 
-          <a href="tel:+94771234567">
-            <Phone size={15} />
-            +94 77 123 4567
-          </a>
+        </div>
 
-          {/* SOCIAL MEDIA */}
-          <div className="socials">
 
+        {/* ================= QUICK LINKS ================= */}
+        <div className="footer-column">
+
+          <h3>Quick Links</h3>
+
+          <div className="footer-link-list">
+
+            <Link to="/">
+              Home
+            </Link>
+
+            <Link to="/about">
+              About Us
+            </Link>
+
+            <Link to="/divisions">
+              Our Divisions
+            </Link>
+
+            <Link to="/projects">
+              Projects
+            </Link>
+
+            <Link to="/careers">
+              Careers
+            </Link>
+
+          </div>
+
+        </div>
+
+
+        {/* ================= SERVICES ================= */}
+        <div className="footer-column footer-services">
+
+          <h3>Our Services</h3>
+
+          <div className="footer-link-list">
+
+            <Link to="/services/mep-maintenance">
+              MEP & Maintenance
+            </Link>
+
+            <Link to="/services/construction-civil">
+              Construction & Civil
+            </Link>
+
+            <Link to="/services/agriculture">
+              Agriculture & Agro-Solution
+            </Link>
+
+            <Link to="/services/energy">
+              Energy & Sustainable Solutions
+            </Link>
+
+            <Link to="/services/information-technology">
+              Information Technology
+            </Link>
+
+          </div>
+
+        </div>
+
+
+        {/* ================= CONTACT ================= */}
+        <div className="footer-column footer-contact">
+
+          <h3>Contact Us</h3>
+
+
+          {/* ADDRESS */}
+          <div className="contact-row">
+
+            <div className="contact-icon">
+              <MapPin size={18} />
+            </div>
+
+            <div>
+
+              <span className="contact-label">
+                Address
+              </span>
+
+              <p>
+                Northern Province,
+                <br />
+                Sri Lanka
+              </p>
+
+            </div>
+
+          </div>
+
+
+          {/* PHONE */}
+          <div className="contact-row">
+
+            <div className="contact-icon">
+              <Phone size={18} />
+            </div>
+
+            <div>
+
+              <span className="contact-label">
+                Phone
+              </span>
+
+              <a href="tel:+94700000000">
+                +94 70 000 0000
+              </a>
+
+            </div>
+
+          </div>
+
+
+          {/* EMAIL */}
+          <div className="contact-row">
+
+            <div className="contact-icon">
+              <Mail size={18} />
+            </div>
+
+            <div>
+
+              <span className="contact-label">
+                Email
+              </span>
+
+              <a href="mailto:info@servicely.com">
+                info@servicely.com
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      {/* ================= BOTTOM FOOTER ================= */}
+      <div className="footer-bottom">
+
+        <div className="footer-bottom-container">
+
+
+          {/* ================= COPYRIGHT ================= */}
+          <div className="footer-copyright">
+
+            <p>
+              © {new Date().getFullYear()} Servicely.
+              All rights reserved.
+            </p>
+
+            <span className="footer-divider">
+              |
+            </span>
+
+            <p>
+              Registration No: PV 123456
+            </p>
+
+          </div>
+
+
+          {/* ================= POLICY LINKS ================= */}
+          <div className="footer-policy">
+
+            <Link to="/privacy-policy">
+              Privacy Policy
+            </Link>
+
+            <Link to="/terms">
+              Terms & Conditions
+            </Link>
+
+            <Link to="/cookie-policy">
+              Cookie Policy
+            </Link>
+
+          </div>
+
+
+          {/* ================= SOCIAL MEDIA ================= */}
+          <div className="footer-social">
+
+            {/* LinkedIn */}
             <a
-              href="#"
-              aria-label="Facebook"
-              className="social-text"
-            >
-              f
-            </a>
-
-            <a
-              href="#"
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="social-text linkedin"
+              className="social-link linkedin"
             >
               in
             </a>
 
+
+            {/* Facebook */}
             <a
-              href="#"
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="social-link facebook"
+            >
+              f
+            </a>
+
+
+            {/* YouTube */}
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="YouTube"
-              className="social-text youtube"
+              className="social-link youtube"
             >
               ▶
             </a>
@@ -70,92 +264,9 @@ export default function Footer() {
 
         </div>
 
-
-        {/* NAVIGATION */}
-        <div>
-
-          <h4>NAVIGATION</h4>
-
-          <Link to="/">
-            Home
-          </Link>
-
-          <Link to="/how-it-works">
-            How It Works
-          </Link>
-
-          <Link to="/for-customer">
-            For Customer
-          </Link>
-
-          <Link to="/for-provider">
-            For Provider
-          </Link>
-
-          <Link to="/services">
-            Services
-          </Link>
-
-          <Link to="/contact">
-            Contact
-          </Link>
-
-        </div>
-
-
-        {/* SERVICES */}
-        <div>
-
-          <h4>SERVICES</h4>
-
-          <span>Plumbing</span>
-          <span>Electrical</span>
-          <span>AC Repair</span>
-          <span>Cleaning</span>
-          <span>Painting</span>
-          <span>Appliance Repair</span>
-
-        </div>
-
-
-        {/* DOWNLOAD APP */}
-        <div>
-
-          <h4>DOWNLOAD THE APP</h4>
-
-          <p>
-            Available on Google Play
-            and the App Store.
-          </p>
-
-          <div className="store">
-            GET IT ON
-            <br />
-            <b>Google Play</b>
-          </div>
-
-          <div className="store">
-             <b>App Store</b>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      {/* FOOTER BOTTOM */}
-      <div className="footer-bottom">
-
-        <span>
-          © 2025 Servicely. All rights reserved.
-        </span>
-
-        <span>
-          Terms &nbsp;&nbsp; Privacy &nbsp;&nbsp; Cookies
-        </span>
-
       </div>
 
     </footer>
   );
 }
+
