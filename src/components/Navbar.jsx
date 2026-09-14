@@ -1,139 +1,260 @@
 
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import {
-  Menu,
-  X,
-  Home,
-  Info,
-  Briefcase,
-  Users,
-  Mail,
-} from "lucide-react";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Link, NavLink } from "react-router-dom";
 
 import logo from "../assets/logo.jpeg";
+
 import "./Navbar.css";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const navLinks = [
-    {
-      name: "Home",
-      path: "/",
-      icon: Home,
-    },
-    {
-      name: "About",
-      path: "/about",
-      icon: Info,
-    },
-    {
-      name: "Services",
-      path: "/services",
-      icon: Briefcase,
-    },
-    {
-      name: "Customers",
-      path: "/customers",
-      icon: Users,
-    },
-    {
-      name: "Contact",
-      path: "/contact",
-      icon: Mail,
-    },
-  ];
-
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
-
-  const isActive = (path) => {
-    return location.pathname === path;
+  const closeMobile = () => {
+    setMobileOpen(false);
   };
 
   return (
     <header className="navbar">
+
       <div className="navbar-container">
 
-        {/* ================= BRAND ================= */}
+        {/* ================= LOGO ================= */}
+
         <Link
           to="/"
-          className="navbar-brand"
-          onClick={closeMenu}
+          className="navbar-logo"
+          onClick={closeMobile}
         >
-          <div className="logo-wrapper">
-            <img
-              src={logo}
-              alt="Servicely Logo"
-              className="navbar-logo"
-            />
-          </div>
-
-          <div className="brand-content">
-            <h2>Servicely</h2>
-            <span>Simple. Fast. Reliable.</span>
-          </div>
+          <img
+            src={logo}
+            alt="Servicely"
+          />
         </Link>
 
-        {/* ================= DESKTOP NAVIGATION ================= */}
-        <nav className="desktop-nav">
-          {navLinks.map((link) => {
-            const Icon = link.icon;
 
-            return (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`nav-link ${
-                  isActive(link.path) ? "active" : ""
-                }`}
-              >
-                <Icon size={17} strokeWidth={2} />
-                <span>{link.name}</span>
-              </Link>
-            );
-          })}
+        {/* ================= DESKTOP NAV ================= */}
+
+        <nav className="desktop-nav">
+
+          {/* HOME */}
+
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            Home
+          </NavLink>
+
+
+          {/* SERVICES */}
+
+          <NavLink
+            to="/services"
+            className={({ isActive }) =>
+              isActive
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            Services
+          </NavLink>
+
+
+          {/* FOR CUSTOMER */}
+
+          <NavLink
+            to="/customer"
+            className={({ isActive }) =>
+              isActive
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            For Customer
+          </NavLink>
+
+
+          {/* FOR PROVIDER */}
+
+          <NavLink
+            to="/provider"
+            className={({ isActive }) =>
+              isActive
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            For Provider
+          </NavLink>
+
+
+          {/* HOW IT WORKS */}
+
+          <NavLink
+            to="/how-it-works"
+            className={({ isActive }) =>
+              isActive
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            How It Works
+          </NavLink>
+
+
+          {/* CONTACT */}
+
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            Contact
+          </NavLink>
+
         </nav>
 
-        {/* ================= MOBILE MENU BUTTON ================= */}
+
+        {/* ================= RIGHT SIDE ================= */}
+
+        <div className="navbar-right">
+
+          <Link
+            to="/services"
+            className="navbar-cta"
+          >
+            Book a Service
+          </Link>
+
+        </div>
+
+
+        {/* ================= MOBILE BUTTON ================= */}
+
         <button
           type="button"
           className="mobile-menu-button"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle navigation menu"
+          onClick={() =>
+            setMobileOpen(!mobileOpen)
+          }
+          aria-label="Toggle navigation"
         >
-          {isOpen ? (
-            <X size={26} />
+
+          {mobileOpen ? (
+            <X size={24} />
           ) : (
-            <Menu size={26} />
+            <Menu size={24} />
           )}
+
         </button>
+
       </div>
 
-      {/* ================= MOBILE NAVIGATION ================= */}
-      <div className={`mobile-nav ${isOpen ? "show" : ""}`}>
-        {navLinks.map((link) => {
-          const Icon = link.icon;
 
-          return (
-            <Link
-              key={link.path}
-              to={link.path}
-              onClick={closeMenu}
-              className={`mobile-nav-link ${
-                isActive(link.path) ? "active" : ""
-              }`}
-            >
-              <Icon size={19} strokeWidth={2} />
-              <span>{link.name}</span>
-            </Link>
-          );
-        })}
-      </div>
+      {/* ================= MOBILE NAV ================= */}
+
+      {mobileOpen && (
+        <div className="mobile-nav">
+
+          <NavLink
+            to="/"
+            onClick={closeMobile}
+            className={({ isActive }) =>
+              isActive
+                ? "mobile-link active"
+                : "mobile-link"
+            }
+          >
+            Home
+          </NavLink>
+
+
+          <NavLink
+            to="/services"
+            onClick={closeMobile}
+            className={({ isActive }) =>
+              isActive
+                ? "mobile-link active"
+                : "mobile-link"
+            }
+          >
+            Services
+          </NavLink>
+
+
+          <NavLink
+            to="/customer"
+            onClick={closeMobile}
+            className={({ isActive }) =>
+              isActive
+                ? "mobile-link active"
+                : "mobile-link"
+            }
+          >
+            For Customer
+          </NavLink>
+
+
+          <NavLink
+            to="/provider"
+            onClick={closeMobile}
+            className={({ isActive }) =>
+              isActive
+                ? "mobile-link active"
+                : "mobile-link"
+            }
+          >
+            For Provider
+          </NavLink>
+
+
+          <NavLink
+            to="/how-it-works"
+            onClick={closeMobile}
+            className={({ isActive }) =>
+              isActive
+                ? "mobile-link active"
+                : "mobile-link"
+            }
+          >
+            How It Works
+          </NavLink>
+
+
+          <NavLink
+            to="/contact"
+            onClick={closeMobile}
+            className={({ isActive }) =>
+              isActive
+                ? "mobile-link active"
+                : "mobile-link"
+            }
+          >
+            Contact
+          </NavLink>
+
+
+          {/* MOBILE CTA */}
+
+          <Link
+            to="/services"
+            className="mobile-cta"
+            onClick={closeMobile}
+          >
+            Book a Service
+          </Link>
+
+        </div>
+      )}
+
     </header>
   );
 }
-

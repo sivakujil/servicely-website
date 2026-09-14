@@ -1,296 +1,347 @@
+
 import {
   ArrowRight,
   BriefcaseBusiness,
-  Clock3,
   Users,
   Star,
   ShieldCheck,
   Check,
-  X,
-  MapPin,
+  CalendarDays,
+  MessageSquare,
+  Play,
 } from "lucide-react";
 
 import { useNavigate } from "react-router-dom";
-
 import Footer from "../components/Footer";
-
 import "./ForProvider.css";
 
 export default function ForProvider() {
-
   const nav = useNavigate();
+
+  const steps = [
+    [
+      "STEP 01",
+      "Accept / Reject",
+      "Review job details and accept the service request.",
+      BriefcaseBusiness,
+    ],
+    [
+      "STEP 02",
+      "View Customer",
+      "Check customer information and confirmed service location.",
+      Users,
+    ],
+    [
+      "STEP 03",
+      "Start Service",
+      "Start the service when you arrive at the customer location.",
+      CalendarDays,
+    ],
+    [
+      "STEP 04",
+      "Complete Job",
+      "Complete the work and confirm the service is finished.",
+      Check,
+    ],
+    [
+      "STEP 05",
+      "Get Feedback",
+      "Receive customer feedback and build your professional reputation.",
+      Star,
+    ],
+  ];
 
   return (
     <>
-      <main className="provider">
+      <main className="provider-page">
+
+        {/* =====================================================
+            HERO
+        ===================================================== */}
 
         <section className="provider-hero">
 
-          <div>
+          {/* LEFT CONTENT */}
+          <div className="provider-hero-content">
 
-            <span className="eyebrow">
+            <span className="provider-eyebrow">
               FOR PROVIDERS
             </span>
 
             <h1>
-              Grow Your Business.
+              Grow Your Business,
               <br />
               <b>On Your Terms.</b>
             </h1>
 
             <p>
-              Join Sri Lanka's trusted service marketplace.
-              Get quality leads, manage your jobs,
-              and grow your income.
+              Connect with customers, receive service requests,
+              manage your jobs, and grow your professional
+              reputation with Servicely.
             </p>
 
-            <div className="hero-actions">
-
-              <button
-                className="primary"
-                onClick={() => nav("/contact")}
-              >
-                Join as Provider
-                <ArrowRight size={16} />
-              </button>
-
-              <button className="secondary">
-                Learn More
-              </button>
-
-            </div>
+            <button
+              className="provider-primary"
+              onClick={() => nav("/contact")}
+            >
+              Join as a Provider
+              <ArrowRight size={16} />
+            </button>
 
           </div>
 
-          <div className="provider-dashboard">
+          {/* RIGHT HERO BANNER */}
+          <div className="provider-hero-banner">
 
-            <div className="dash-top">
+            <div className="provider-banner-content">
 
-              <b>New Jobs</b>
+              <div className="provider-banner-icon">
+                <BriefcaseBusiness size={30} />
+              </div>
 
               <span>
-                Instant Access
+                GROW WITH SERVICELY
               </span>
 
-            </div>
-
-            <div className="new-job">
-
-              <small>
-                STEP 01 • NEW REQUEST
-              </small>
-
-              <h3>
-                AC Repair
-              </h3>
+              <h2>
+                Turn your skills into
+                <br />
+                <b>new opportunities.</b>
+              </h2>
 
               <p>
-                <MapPin size={13} />
-                Colombo 03 • 2.4 km
+                Find customers, manage your services,
+                and build a trusted professional profile.
               </p>
 
-              <div>
+              <div className="provider-service-pills">
 
-                <button className="accept">
-                  <Check />
-                  Accept
-                </button>
-
-                <button className="reject">
-                  <X />
-                  Reject
-                </button>
-
-              </div>
-
-            </div>
-
-            <div className="new-job faded">
-
-              <small>
-                NEW REQUEST
-              </small>
-
-              <h3>
-                Plumbing
-              </h3>
-
-              <p>
-                Colombo 07 • 4.1 km
-              </p>
-
-            </div>
-
-          </div>
-
-        </section>
-
-        <section className="earn section">
-
-          <div className="earn-copy">
-
-            <span className="eyebrow">
-              EARNINGS
-            </span>
-
-            <h2>
-              Earn More.
-              <br />
-              <b>Work Smarter.</b>
-            </h2>
-
-            <p>
-              Top providers on Servicely earn over
-              Rs. 100,000 per month. Your income grows
-              as your rating improves and you take on
-              more jobs.
-            </p>
-
-            <div className="earn-cards">
-
-              <div>
-                <BriefcaseBusiness />
-
-                <b>
-                  Rs. 85K+
-                </b>
-
-                <span>
-                  Monthly income
-                </span>
-              </div>
-
-              <div>
-                <Clock3 />
-
-                <b>
-                  24 hrs
-                </b>
-
-                <span>
-                  Payment release
-                </span>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div className="provider-stats">
-
-            <div>
-              <Users />
-              <b>850+</b>
-              <span>
-                Verified Providers
-              </span>
-            </div>
-
-            <div>
-              <ShieldCheck />
-              <b>95%</b>
-              <span>
-                Acceptance Rate
-              </span>
-            </div>
-
-            <div>
-              <Star />
-              <b>4.8★</b>
-              <span>
-                Avg. Provider Rating
-              </span>
-            </div>
-
-            <div>
-              <Users />
-              <b>12K+</b>
-              <span>
-                Customers Served
-              </span>
-            </div>
-
-          </div>
-
-        </section>
-
-        <section className="provider-steps">
-
-          <span className="eyebrow">
-            HOW IT WORKS
-          </span>
-
-          <h2>
-            Simple. Fast. <b>Reliable.</b>
-          </h2>
-
-          <div className="provider-timeline">
-
-            {[
-              [
-                "STEP 01",
-                "Accept / Reject",
-                "Review job details, then accept or pass.",
-              ],
-              [
-                "STEP 02",
-                "View Customer",
-                "See customer info and confirmed location.",
-              ],
-              [
-                "STEP 03",
-                "Start Service",
-                "Tap Start when you arrive at the job site.",
-              ],
-              [
-                "STEP 04",
-                "Upload Work Photos",
-                "Document completion with before/after photos.",
-              ],
-            ].map(([tag, title, text], i) => (
-
-              <article key={title}>
-
-                <div className="timeline-dot">
-                  {i + 1}
+                <div>
+                  <BriefcaseBusiness size={15} />
+                  More Jobs
                 </div>
 
-                <small>{tag}</small>
+                <div>
+                  <ShieldCheck size={15} />
+                  Verified Profile
+                </div>
 
-                <h3>{title}</h3>
+                <div>
+                  <Star size={15} />
+                  Build Reputation
+                </div>
 
-                <p>{text}</p>
+              </div>
+
+            </div>
+
+            {/* DECORATION */}
+            <div className="provider-banner-decoration">
+
+              <div className="provider-banner-circle provider-circle-one"></div>
+
+              <div className="provider-banner-circle provider-circle-two"></div>
+
+              <div className="provider-banner-card provider-card-one">
+                <Check size={15} />
+                Job Accepted
+              </div>
+
+              <div className="provider-banner-card provider-card-two">
+                <Star size={15} />
+                4.9 Rating
+              </div>
+
+              <div className="provider-banner-card provider-card-three">
+                <BriefcaseBusiness size={15} />
+                New Request
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        {/* =====================================================
+            PROVIDER FLOW
+        ===================================================== */}
+
+        <section className="provider-flow">
+
+          {/* LEFT STEP LIST */}
+          <div className="provider-flow-list">
+
+            {steps.map(([tag, title, text, Icon]) => (
+              <article key={title}>
+
+                <span>
+                  <Icon size={20} />
+                </span>
+
+                <div>
+                  <small>{tag}</small>
+
+                  <h3>{title}</h3>
+
+                  <p>{text}</p>
+                </div>
+
+                <ArrowRight size={17} />
 
               </article>
-
             ))}
 
           </div>
 
-        </section>
 
-        <section className="ready">
+          {/* RIGHT VIDEO */}
+          <div className="provider-demo-card">
 
-          <div>
+            <div className="provider-video-card">
 
-            <h2>
-              Ready to grow with Servicely?
-            </h2>
+              <div className="provider-video-header">
 
-            <p>
-              Join trusted providers serving
-              customers across Sri Lanka.
-            </p>
+                <div>
+
+                  <span className="provider-video-label">
+                    PROVIDER GUIDE
+                  </span>
+
+                  <h3>
+                    சேவையை எப்படி நிர்வகிப்பது?
+                  </h3>
+
+                </div>
+
+                <div className="provider-video-play">
+                  <Play
+                    size={18}
+                    fill="currentColor"
+                  />
+                </div>
+
+              </div>
+
+
+              <div className="provider-youtube">
+
+                <iframe
+                  src="https://www.youtube.com/embed/HQNziXgadPE"
+                  title="Servicely Provider Guide"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+
+              </div>
+
+
+              <div className="provider-video-caption">
+
+                <span>
+                  ▶ YouTube
+                </span>
+
+                <p>
+                  Servicely மூலம் provider ஆக
+                  சேவைகளை எளிதாக நிர்வகிப்பது எப்படி
+                </p>
+
+              </div>
+
+            </div>
 
           </div>
 
-          <button
-            className="white-btn"
-            onClick={() => nav("/contact")}
-          >
-            Join as a Provider
-            <ArrowRight size={15} />
-          </button>
+        </section>
+
+
+        {/* =====================================================
+            TRUST FEATURES
+        ===================================================== */}
+
+        <section className="provider-trust">
+
+          <div>
+
+            <ShieldCheck />
+
+            <b>
+              Verified Profile
+            </b>
+
+            <span>
+              Build trust with customers
+            </span>
+
+          </div>
+
+
+          <div>
+
+            <MessageSquare />
+
+            <b>
+              Easy Communication
+            </b>
+
+            <span>
+              Stay connected with customers
+            </span>
+
+          </div>
+
+
+          <div>
+
+            <Star />
+
+            <b>
+              Real Feedback
+            </b>
+
+            <span>
+              Grow through customer reviews
+            </span>
+
+          </div>
+
+        </section>
+
+
+        {/* =====================================================
+            FINAL CTA
+        ===================================================== */}
+
+        <section className="provider-final-cta">
+
+          <div>
+
+            <span>
+              READY TO GROW?
+            </span>
+
+            <h2>
+              Start growing your
+              <br />
+              <b>service business today.</b>
+            </h2>
+
+            <p>
+              Join Servicely and connect with customers
+              who need your skills.
+            </p>
+
+            <button
+              onClick={() => nav("/contact")}
+            >
+              Join as a Provider
+              <ArrowRight size={17} />
+            </button>
+
+          </div>
 
         </section>
 
@@ -300,3 +351,4 @@ export default function ForProvider() {
     </>
   );
 }
+

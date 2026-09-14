@@ -1,30 +1,36 @@
+
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+
 import Home from "./pages/Home";
-import HowItWorks from "./pages/HowItWorks";
+import Services from "./pages/Services";
 import ForCustomer from "./pages/ForCustomer";
 import ForProvider from "./pages/ForProvider";
-import Services from "./pages/Services";
+import HowItWorks from "./pages/HowItWorks";
 import Contact from "./pages/Contact";
 
-import "./App.css";
-
-function App() {
+export default function App() {
   return (
     <>
+      {/* ================= NAVBAR ================= */}
       <Navbar />
 
+      {/* ================= ROUTES ================= */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/how-it-works" element={<HowItWorks />} />
-        <Route path="/for-customer" element={<ForCustomer />} />
-        <Route path="/for-provider" element={<ForProvider />} />
+
         <Route path="/services" element={<Services />} />
+
+        <Route path="/customer" element={<ForCustomer />} />
+
+        <Route path="/provider" element={<ForProvider />} />
+
+        <Route path="/how-it-works" element={<HowItWorks />} />
+
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </>
   );
 }
 
-export default App;
