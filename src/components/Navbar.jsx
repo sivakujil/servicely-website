@@ -1,67 +1,139 @@
-import { ArrowRight, Menu, X } from "lucide-react";
-import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
 
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import {
+  Menu,
+  X,
+  Home,
+  Info,
+  Briefcase,
+  Users,
+  Mail,
+} from "lucide-react";
+
+import logo from "../assets/logo.jpeg";
 import "./Navbar.css";
 
-const links = [
-  ["/", "Home"],
-  ["/how-it-works", "How It Works"],
-  ["/for-customer", "For Customer"],
-  ["/for-provider", "For Provider"],
-  ["/services", "Services"],
-  ["/contact", "Contact"],
-];
-
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const navLinks = [
+    {
+      name: "Home",
+      path: "/",
+      icon: Home,
+    },
+    {
+      name: "About",
+      path: "/about",
+      icon: Info,
+    },
+    {
+      name: "Services",
+      path: "/services",
+      icon: Briefcase,
+    },
+    {
+      name: "Customers",
+      path: "/customers",
+      icon: Users,
+    },
+    {
+      name: "Contact",
+      path: "/contact",
+      icon: Mail,
+    },
+  ];
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
 
   return (
     <header className="navbar">
-      <div className="nav-inner">
+      <div className="navbar-container">
 
-        <button
-          className="brand"
-          onClick={() => navigate("/")}
-          aria-label="Servicely home"
+        {/* ================= BRAND ================= */}
+        <Link
+          to="/"
+          className="navbar-brand"
+          onClick={closeMenu}
         >
-          <img
-            src="/src/assets/logo.png"
-            alt="Servicely"
-            className="brand-logo"
-          />
-          <span>Servicely</span>
-        </button>
+          <div className="logo-wrapper">
+            <img
+              src={logo}
+              alt="Servicely Logo"
+              className="navbar-logo"
+            />
+          </div>
 
-        <nav className={`nav-links ${open ? "open" : ""}`}>
-          {links.map(([to, label]) => (
-            <NavLink
-              key={to}
-              to={to}
-              onClick={() => setOpen(false)}
-            >
-              {label}
-            </NavLink>
-          ))}
+          <div className="brand-content">
+            <h2>Servicely</h2>
+            <span>Simple. Fast. Reliable.</span>
+          </div>
+        </Link>
+
+        {/* ================= DESKTOP NAVIGATION ================= */}
+        <nav className="desktop-nav">
+          {navLinks.map((link) => {
+            const Icon = link.icon;
+
+            return (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`nav-link ${
+                  isActive(link.path) ? "active" : ""
+                }`}
+              >
+                <Icon size={17} strokeWidth={2} />
+                <span>{link.name}</span>
+              </Link>
+            );
+          })}
         </nav>
 
+        {/* ================= MOBILE MENU BUTTON ================= */}
         <button
-          className="nav-cta"
-          onClick={() => navigate("/services")}
+          type="button"
+          className="mobile-menu-button"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle navigation menu"
         >
-          Get Started
-          <ArrowRight size={17} />
+          {isOpen ? (
+            <X size={26} />
+          ) : (
+            <Menu size={26} />
+          )}
         </button>
+      </div>
 
-        <button
-          className="menu-btn"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <X /> : <Menu />}
-        </button>
+      {/* ================= MOBILE NAVIGATION ================= */}
+      <div className={`mobile-nav ${isOpen ? "show" : ""}`}>
+        {navLinks.map((link) => {
+          const Icon = link.icon;
 
+          return (
+            <Link
+              key={link.path}
+              to={link.path}
+              onClick={closeMenu}
+              className={`mobile-nav-link ${
+                isActive(link.path) ? "active" : ""
+              }`}
+            >
+              <Icon size={19} strokeWidth={2} />
+              <span>{link.name}</span>
+            </Link>
+          );
+        })}
       </div>
     </header>
   );
 }
+
