@@ -18,17 +18,28 @@ export default function App() {
 
       {/* ================= ROUTES ================= */}
       <Routes>
+        {/* HOME */}
         <Route path="/" element={<Home />} />
 
+        {/* SERVICES */}
         <Route path="/services" element={<Services />} />
 
-        <Route path="/customer" element={<ForCustomer />} />
-
-        <Route path="/provider" element={<ForProvider />} />
-
+        {/* HOW IT WORKS */}
         <Route path="/how-it-works" element={<HowItWorks />} />
 
+        {/* FOR CUSTOMER */}
+        <Route path="/for-customer" element={<ForCustomer />} />
+
+        {/* FOR PROVIDER */}
+        <Route path="/for-provider" element={<ForProvider />} />
+
+        {/* CONTACT */}
         <Route path="/contact" element={<Contact />} />
+
+        {/* OPTIONAL: OLD ROUTES */}
+        {/* These keep old links working too */}
+        <Route path="/customer" element={<ForCustomer />} />
+        <Route path="/provider" element={<ForProvider />} />
       </Routes>
     </>
   );

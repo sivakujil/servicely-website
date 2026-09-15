@@ -1,901 +1,922 @@
-
-/* =========================================================
+/* =====================================================
    CUSTOMER PAGE
-========================================================= */
+===================================================== */
 
 .audience {
-  background: #f7fbff;
+  width: 100%;
   min-height: 100vh;
+  background: #f7f9fc;
+  color: #172033;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow: hidden;
 }
 
 
-/* =========================================================
+/* =====================================================
    HERO
-========================================================= */
+===================================================== */
 
 .aud-hero {
-  max-width: 1344px;
-
-  margin: auto;
-
-  padding: 100px 48px;
+  width: min(1380px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 95px 0 85px;
 
   display: grid;
-
   grid-template-columns: 0.9fr 1.1fr;
-
+  gap: 70px;
   align-items: center;
-
-  gap: 65px;
-
-  box-sizing: border-box;
 }
 
 .aud-hero-content {
-  min-width: 0;
+  max-width: 650px;
 }
 
-.aud-hero h1 {
-  font-size: 54px;
+.eyebrow,
+.customer-download-eyebrow {
+  display: inline-block;
+  margin-bottom: 20px;
 
-  line-height: 1.05;
-
-  letter-spacing: -0.04em;
-
-  margin: 22px 0;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  color: #1689d8;
 }
 
-.aud-hero h1 b {
-  color: #2860d8;
-}
-
-.aud-hero p {
-  max-width: 540px;
-
-  color: #728095;
-
-  line-height: 1.7;
-
-  font-size: 16px;
-
+.aud-hero-content h1 {
   margin: 0;
+
+  font-size: 66px;
+  line-height: 1.08;
+  letter-spacing: -2.5px;
+  font-weight: 600;
+  color: #172033;
 }
 
-.aud-hero .primary {
-  margin-top: 28px;
+.aud-hero-content h1 b {
+  color: #1689d8;
+  font-weight: 750;
+}
+
+.aud-hero-content p {
+  max-width: 600px;
+  margin: 28px 0 34px;
+
+  font-size: 19px;
+  line-height: 1.75;
+  color: #687386;
+}
+
+.primary {
+  border: none;
+  outline: none;
+
+  min-height: 52px;
+  padding: 0 26px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border-radius: 10px;
+
+  background: #1689d8;
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 12px 28px rgba(22, 137, 216, 0.20);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  background: #117abd;
+  box-shadow: 0 16px 32px rgba(22, 137, 216, 0.27);
 }
 
 
-/* =========================================================
-   HERO BANNER
-========================================================= */
+/* =====================================================
+   CUSTOMER HERO BANNER
+===================================================== */
 
 .customer-hero-banner {
   position: relative;
-
-  min-height: 420px;
+  min-height: 470px;
 
   overflow: hidden;
+  border-radius: 30px;
 
-  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    #0b2238 0%,
+    #103b60 55%,
+    #1689d8 100%
+  );
 
-  padding: 45px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #eaf3ff 0%,
-      #dceaff 45%,
-      #f6faff 100%
-    );
-
-  border: 1px solid #dce7f5;
-
-  box-shadow:
-    0 25px 60px rgba(30, 70, 120, 0.08);
-
-  box-sizing: border-box;
-
-  display: flex;
-
-  align-items: center;
+  box-shadow: 0 25px 60px rgba(17, 45, 72, 0.16);
 }
 
 .hero-banner-content {
   position: relative;
+  z-index: 3;
 
-  z-index: 5;
-
-  max-width: 430px;
-}
-
-.hero-banner-content > span {
-  display: inline-block;
-
-  font-size: 9px;
-
-  font-weight: 800;
-
-  letter-spacing: 0.08em;
-
-  color: #5277bd;
-
-  margin-bottom: 15px;
+  padding: 58px 50px;
+  max-width: 620px;
 }
 
 .hero-banner-icon {
-  width: 54px;
+  width: 62px;
+  height: 62px;
 
-  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  border-radius: 15px;
+  margin-bottom: 24px;
 
-  background: #ffffff;
+  border-radius: 17px;
 
-  color: #2860d8;
+  background: rgba(255, 255, 255, 0.13);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
 
-  display: grid;
+.hero-banner-content > span:not(.hero-banner-icon) {
+  display: block;
 
-  place-items: center;
+  margin-bottom: 15px;
 
-  margin-bottom: 18px;
-
-  box-shadow:
-    0 10px 25px rgba(40, 96, 216, 0.1);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  color: #9ddcff;
 }
 
 .hero-banner-content h2 {
-  font-size: 36px;
+  margin: 0;
 
-  line-height: 1.12;
+  font-size: 42px;
+  line-height: 1.18;
+  letter-spacing: -1.2px;
+  font-weight: 500;
 
-  letter-spacing: -0.03em;
-
-  margin: 0 0 15px;
-
-  color: #18263a;
+  color: #ffffff;
 }
 
 .hero-banner-content h2 b {
-  color: #2860d8;
+  font-weight: 750;
 }
 
 .hero-banner-content p {
-  max-width: 390px;
+  max-width: 490px;
+  margin: 22px 0 28px;
 
-  margin: 0;
-
-  color: #6d7d92;
-
-  line-height: 1.6;
-
-  font-size: 14px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
 }
-
-
-/* =========================================================
-   SERVICE PILLS
-========================================================= */
 
 .hero-service-pills {
   display: flex;
-
   flex-wrap: wrap;
-
-  gap: 8px;
-
-  margin-top: 24px;
+  gap: 10px;
 }
 
 .hero-service-pills div {
   display: inline-flex;
-
   align-items: center;
+  gap: 8px;
 
-  gap: 6px;
+  padding: 10px 14px;
 
-  padding: 8px 11px;
+  border-radius: 30px;
 
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  color: #ffffff;
 
-  border-radius: 8px;
-
-  color: #51647d;
-
-  font-size: 10px;
-
-  font-weight: 700;
-
-  backdrop-filter: blur(8px);
+  font-size: 13px;
+  font-weight: 600;
 }
-
-.hero-service-pills svg {
-  color: #2860d8;
-}
-
-
-/* =========================================================
-   HERO DECORATION
-========================================================= */
 
 .hero-banner-decoration {
   position: absolute;
+  inset: 0;
 
-  right: 0;
-
-  top: 0;
-
-  width: 45%;
-
-  height: 100%;
+  pointer-events: none;
 }
 
 .banner-circle {
   position: absolute;
 
   border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .circle-one {
-  width: 260px;
+  width: 360px;
+  height: 360px;
 
-  height: 260px;
-
-  right: -70px;
-
-  top: 50px;
-
-  background: rgba(40, 96, 216, 0.08);
+  right: -120px;
+  top: -100px;
 }
 
 .circle-two {
-  width: 170px;
+  width: 250px;
+  height: 250px;
 
-  height: 170px;
-
-  right: 70px;
-
-  bottom: -45px;
-
-  background: rgba(40, 96, 216, 0.08);
+  right: 40px;
+  bottom: -130px;
 }
 
 .banner-card {
   position: absolute;
 
   display: flex;
-
   align-items: center;
-
   gap: 8px;
 
-  padding: 12px 15px;
-
-  background: #ffffff;
-
-  border: 1px solid #e1e8f2;
-
-  border-radius: 11px;
-
-  color: #526278;
-
-  font-size: 10px;
-
-  font-weight: 700;
-
-  box-shadow:
-    0 15px 35px rgba(30, 60, 100, 0.1);
-
-  z-index: 3;
-}
-
-.banner-card svg {
-  color: #2860d8;
-}
-
-.banner-card-one {
-  right: 35px;
-
-  top: 105px;
-}
-
-.banner-card-two {
-  right: 80px;
-
-  bottom: 95px;
-}
-
-
-/* =========================================================
-   CUSTOMER FLOW
-========================================================= */
-
-.customer-flow {
-  max-width: 1344px;
-
-  margin: auto;
-
-  padding: 75px 48px;
-
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 65px;
-
-  box-sizing: border-box;
-}
-
-
-/* =========================================================
-   FLOW LIST
-========================================================= */
-
-.flow-list article {
-  background: #ffffff;
-
-  border: 1px solid #e1e8f2;
+  padding: 12px 17px;
 
   border-radius: 12px;
 
-  margin: 14px 0;
+  background: rgba(255, 255, 255, 0.96);
+  color: #172033;
 
-  padding: 17px;
+  font-size: 13px;
+  font-weight: 700;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.16);
+}
+
+.banner-card svg {
+  color: #1689d8;
+}
+
+.banner-card-one {
+  right: 38px;
+  top: 150px;
+}
+
+.banner-card-two {
+  right: 85px;
+  bottom: 75px;
+}
+
+
+/* =====================================================
+   CUSTOMER FLOW
+===================================================== */
+
+.customer-flow {
+  width: min(1380px, calc(100% - 80px));
+  margin: 0 auto;
+
+  padding: 35px 0 90px;
 
   display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 55px;
+  align-items: start;
+}
 
-  grid-template-columns: 46px 1fr 18px;
-
+.flow-list {
+  display: flex;
+  flex-direction: column;
   gap: 14px;
+}
 
+.flow-list article {
+  min-height: 115px;
+
+  padding: 21px 23px;
+
+  display: grid;
+  grid-template-columns: 52px 1fr 25px;
   align-items: center;
+  gap: 16px;
 
-  transition: 0.2s ease;
+  background: #ffffff;
+  border: 1px solid #e5ebf2;
+  border-radius: 16px;
+
+  box-shadow: 0 7px 22px rgba(26, 43, 66, 0.045);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .flow-list article:hover {
-  transform: translateX(3px);
-
-  border-color: #cddbef;
-
-  box-shadow:
-    0 10px 25px rgba(30, 60, 100, 0.06);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(26, 43, 66, 0.08);
 }
 
 .flow-list article > span {
-  width: 42px;
+  width: 52px;
+  height: 52px;
 
-  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  border-radius: 11px;
+  border-radius: 14px;
 
-  background: #eff6ff;
-
-  color: #4d83df;
-
-  display: grid;
-
-  place-items: center;
+  background: #eaf6ff;
+  color: #1689d8;
 }
 
 .flow-list article small {
-  font-size: 9px;
+  display: block;
 
-  color: #6d8ed4;
+  margin-bottom: 5px;
 
+  font-size: 12px;
   font-weight: 800;
+  letter-spacing: 1.1px;
+  color: #1689d8;
 }
 
-.flow-list h3 {
-  margin: 4px 0;
+.flow-list article h3 {
+  margin: 0 0 5px;
 
-  font-size: 14px;
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: 750;
+  color: #172033;
 }
 
-.flow-list p {
+.flow-list article p {
   margin: 0;
 
-  color: #7a8798;
-
-  font-size: 11px;
-
-  line-height: 1.4;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #737f91;
 }
 
-.flow-list > article > svg {
-  color: #2860d8;
+.flow-list article > svg {
+  color: #9aa6b5;
 }
 
 
-/* =========================================================
-   VIDEO CARD
-========================================================= */
+/* =====================================================
+   VIDEO
+===================================================== */
 
 .demo-card {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
+  width: 100%;
 }
 
 .customer-video-card {
-  width: 100%;
+  overflow: hidden;
 
-  max-width: 470px;
-
-  padding: 18px;
+  border-radius: 22px;
 
   background: #ffffff;
+  border: 1px solid #e3eaf2;
 
-  border: 1px solid #e1e8f2;
-
-  border-radius: 18px;
-
-  box-shadow:
-    0 20px 50px rgba(30, 60, 100, 0.08);
-
-  box-sizing: border-box;
+  box-shadow: 0 15px 45px rgba(26, 43, 66, 0.07);
 }
 
-
-/* =========================================================
-   VIDEO HEADER
-========================================================= */
-
 .video-card-header {
+  padding: 25px 27px;
+
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
-  gap: 15px;
-
-  margin-bottom: 15px;
+  gap: 20px;
 }
 
 .video-label {
   display: block;
 
-  font-size: 8px;
+  margin-bottom: 7px;
 
+  font-size: 12px;
   font-weight: 800;
+  letter-spacing: 1.3px;
 
-  letter-spacing: 0.08em;
-
-  color: #6d8ed4;
-
-  margin-bottom: 5px;
+  color: #1689d8;
 }
 
 .video-card-header h3 {
   margin: 0;
 
-  color: #26364c;
-
-  font-size: 17px;
+  font-size: 22px;
+  font-weight: 750;
+  color: #172033;
 }
 
 .video-play-icon {
-  width: 38px;
-
-  height: 38px;
+  width: 46px;
+  height: 46px;
 
   flex-shrink: 0;
 
-  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  background: #eff6ff;
+  border-radius: 50%;
 
-  color: #2860d8;
-
-  display: grid;
-
-  place-items: center;
+  background: #1689d8;
+  color: #ffffff;
 }
-
-
-/* =========================================================
-   VIDEO
-========================================================= */
 
 .customer-video {
   position: relative;
-
   width: 100%;
-
   aspect-ratio: 16 / 9;
 
-  overflow: hidden;
-
-  background: #080b11;
-
-  border-radius: 13px;
+  background: #101923;
 }
 
 .customer-video iframe {
-  display: block;
-
   width: 100%;
-
   height: 100%;
 
-  border: 0;
+  display: block;
+
+  border: none;
 }
 
-
-/* =========================================================
-   VIDEO CAPTION
-========================================================= */
-
 .video-caption {
+  padding: 17px 25px;
+
   display: flex;
-
   align-items: center;
-
-  gap: 10px;
-
-  margin-top: 12px;
+  gap: 15px;
 }
 
 .video-caption span {
-  flex-shrink: 0;
+  padding: 7px 11px;
 
-  padding: 5px 8px;
+  border-radius: 7px;
 
-  background: #fff0f0;
+  background: #f1f5f9;
+  color: #ef4444;
 
-  color: #e33d3d;
-
-  border-radius: 6px;
-
-  font-size: 9px;
-
+  font-size: 12px;
   font-weight: 800;
 }
 
 .video-caption p {
   margin: 0;
 
-  color: #728095;
-
-  font-size: 11px;
-
-  line-height: 1.4;
+  font-size: 14px;
+  color: #687386;
 }
 
 
-/* =========================================================
+/* =====================================================
    TRUST
-========================================================= */
+===================================================== */
 
 .customer-trust {
-  max-width: 1240px;
-
+  width: min(1380px, calc(100% - 80px));
   margin: 0 auto 90px;
 
+  padding: 38px 42px;
+
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
 
-  gap: 18px;
-
-  padding: 0 22px;
-
-  box-sizing: border-box;
-}
-
-.customer-trust div {
   background: #ffffff;
 
-  border: 1px solid #e1e8f2;
+  border: 1px solid #e4eaf1;
+  border-radius: 22px;
 
-  border-radius: 12px;
-
-  padding: 22px;
-
-  display: grid;
-
-  gap: 7px;
-
-  transition: 0.2s ease;
+  box-shadow: 0 15px 40px rgba(26, 43, 66, 0.05);
 }
 
-.customer-trust div:hover {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 12px 30px rgba(30, 60, 100, 0.06);
+.customer-trust > div {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  column-gap: 14px;
+  align-items: center;
 }
 
 .customer-trust svg {
-  color: #3f76dc;
+  grid-row: span 2;
+
+  width: 48px;
+  height: 48px;
+
+  padding: 12px;
+
+  border-radius: 13px;
+
+  background: #eaf6ff;
+  color: #1689d8;
+}
+
+.customer-trust b {
+  font-size: 16px;
+  line-height: 1.3;
+  color: #172033;
 }
 
 .customer-trust span {
-  font-size: 12px;
+  margin-top: 4px;
 
-  color: #7a8798;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #7a8594;
 }
 
 
-/* =========================================================
-   TABLET
-========================================================= */
+/* =====================================================
+   DOWNLOAD APP
+===================================================== */
 
-@media (max-width: 1000px) {
+.customer-download-app {
+  width: min(1380px, calc(100% - 80px));
+  min-height: 430px;
+
+  margin: 0 auto 100px;
+
+  position: relative;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: center;
+
+  border-radius: 30px;
+
+  background: linear-gradient(
+    135deg,
+    #0b2238 0%,
+    #123f64 58%,
+    #1689d8 100%
+  );
+
+  box-shadow: 0 25px 60px rgba(15, 48, 76, 0.15);
+}
+
+.customer-download-content {
+  position: relative;
+  z-index: 4;
+
+  padding: 62px;
+}
+
+.customer-download-eyebrow {
+  color: #9ddcff;
+}
+
+.customer-download-content h2 {
+  margin: 0;
+
+  font-size: 43px;
+  line-height: 1.15;
+  letter-spacing: -1.2px;
+
+  font-weight: 550;
+  color: #ffffff;
+}
+
+.customer-download-content h2 b {
+  font-weight: 800;
+}
+
+.customer-download-content > p {
+  margin: 18px 0 30px;
+
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.customer-app-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.app-store-button {
+  min-width: 185px;
+  min-height: 62px;
+
+  padding: 9px 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: #111827;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.app-store-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+}
+
+.app-store-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #111827;
+}
+
+.app-store-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.app-store-text span {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
+.app-store-text strong {
+  margin-top: 3px;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.customer-download-decoration {
+  position: relative;
+  height: 100%;
+  min-height: 430px;
+}
+
+.download-phone-card {
+  position: absolute;
+
+  width: 205px;
+  height: 360px;
+
+  right: 150px;
+  top: 38px;
+
+  padding: 10px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  transform: rotate(7deg);
+
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.download-phone-screen {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+  color: #1689d8;
+}
+
+.download-phone-screen strong {
+  font-size: 22px;
+  color: #172033;
+}
+
+.download-phone-screen span {
+  font-size: 12px;
+  color: #758194;
+}
+
+.download-floating-card {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 16px;
+
+  border-radius: 11px;
+
+  background: #ffffff;
+  color: #172033;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+.download-floating-card svg {
+  color: #1689d8;
+}
+
+.download-card-one {
+  top: 105px;
+  right: 25px;
+}
+
+.download-card-two {
+  bottom: 95px;
+  right: 75px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
 
   .aud-hero {
     grid-template-columns: 1fr;
-
-    padding: 80px 32px;
-
     gap: 45px;
-
-    text-align: center;
   }
 
-  .aud-hero p {
-    margin: auto;
-  }
-
-  .aud-hero .primary {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 7px;
-  }
-
-  .customer-hero-banner {
-    text-align: left;
-
-    min-height: 390px;
+  .aud-hero-content {
+    max-width: 800px;
   }
 
   .customer-flow {
     grid-template-columns: 1fr;
-
-    padding: 70px 32px;
-
-    gap: 40px;
   }
 
-  .customer-video-card {
-    max-width: 650px;
+  .customer-download-app {
+    grid-template-columns: 1fr;
   }
 
-  .customer-trust {
-    margin-left: 32px;
-
-    margin-right: 32px;
+  .customer-download-decoration {
+    display: none;
   }
+
 }
 
 
-/* =========================================================
+/* =====================================================
    MOBILE
-========================================================= */
+===================================================== */
 
-@media (max-width: 850px) {
+@media (max-width: 700px) {
 
   .aud-hero,
-  .customer-flow {
-    grid-template-columns: 1fr;
-
-    padding: 70px 22px;
+  .customer-flow,
+  .customer-trust,
+  .customer-download-app {
+    width: calc(100% - 32px);
   }
-
-  .aud-hero h1 {
-    font-size: 44px;
-  }
-
-  .aud-hero p {
-    font-size: 14px;
-  }
-
-  .customer-hero-banner {
-    min-height: 450px;
-
-    padding: 32px;
-
-    align-items: flex-start;
-  }
-
-  .hero-banner-content {
-    max-width: 100%;
-  }
-
-  .hero-banner-content h2 {
-    font-size: 32px;
-  }
-
-  .hero-banner-decoration {
-    width: 100%;
-
-    height: 180px;
-
-    top: auto;
-
-    bottom: 0;
-  }
-
-  .circle-one {
-    width: 220px;
-
-    height: 220px;
-
-    right: -40px;
-
-    top: 20px;
-  }
-
-  .circle-two {
-    width: 130px;
-
-    height: 130px;
-
-    right: 100px;
-
-    bottom: -55px;
-  }
-
-  .banner-card-one {
-    right: 25px;
-
-    top: 45px;
-  }
-
-  .banner-card-two {
-    right: 100px;
-
-    bottom: 30px;
-  }
-
-  .hero-service-pills {
-    max-width: 400px;
-  }
-
-  .customer-trust {
-    grid-template-columns: 1fr;
-
-    margin: 0 22px 70px;
-
-    padding: 0;
-  }
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 500px) {
 
   .aud-hero {
-    padding: 60px 18px;
+    padding: 65px 0 55px;
   }
 
-  .aud-hero h1 {
-    font-size: 39px;
+  .aud-hero-content h1 {
+    font-size: 46px;
+    letter-spacing: -1.6px;
+  }
+
+  .aud-hero-content p {
+    font-size: 17px;
+    line-height: 1.65;
   }
 
   .customer-hero-banner {
     min-height: 470px;
+    border-radius: 22px;
+  }
 
-    padding: 28px 22px;
+  .hero-banner-content {
+    padding: 38px 27px;
+  }
 
-    border-radius: 18px;
+  .hero-banner-content h2 {
+    font-size: 34px;
+  }
+
+  .hero-banner-content p {
+    font-size: 16px;
+  }
+
+  .hero-service-pills {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .banner-card-one {
+    right: 20px;
+    top: auto;
+    bottom: 80px;
+  }
+
+  .banner-card-two {
+    right: 20px;
+    bottom: 25px;
+  }
+
+  .customer-flow {
+    padding-bottom: 65px;
+  }
+
+  .flow-list article {
+    grid-template-columns: 45px 1fr 20px;
+    padding: 18px;
+  }
+
+  .flow-list article > span {
+    width: 45px;
+    height: 45px;
+  }
+
+  .flow-list article h3 {
+    font-size: 18px;
+  }
+
+  .flow-list article p {
+    font-size: 13px;
+  }
+
+  .customer-trust {
+    grid-template-columns: 1fr;
+    padding: 28px 24px;
+    margin-bottom: 65px;
+  }
+
+  .customer-download-app {
+    margin-bottom: 70px;
+    border-radius: 22px;
+  }
+
+  .customer-download-content {
+    padding: 45px 28px;
+  }
+
+  .customer-download-content h2 {
+    font-size: 35px;
+  }
+
+  .customer-download-content > p {
+    font-size: 16px;
+  }
+
+  .customer-app-buttons {
+    flex-direction: column;
+  }
+
+  .app-store-button {
+    width: 100%;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+  .aud-hero-content h1 {
+    font-size: 39px;
+  }
+
+  .eyebrow,
+  .customer-download-eyebrow {
+    font-size: 13px;
   }
 
   .hero-banner-content h2 {
     font-size: 29px;
   }
 
-  .hero-banner-content p {
-    font-size: 13px;
+  .customer-download-content h2 {
+    font-size: 31px;
   }
 
-  .hero-service-pills {
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    max-width: 210px;
-  }
-
-  .hero-service-pills div {
-    justify-content: flex-start;
-  }
-
-  .banner-card {
-    font-size: 9px;
-
-    padding: 10px 12px;
-  }
-
-  .banner-card-one {
-    right: 18px;
-
-    top: 55px;
-  }
-
-  .banner-card-two {
-    right: 45px;
-
-    bottom: 22px;
-  }
-
-  .customer-flow {
-    padding: 60px 18px;
-  }
-
-  .flow-list article {
-    grid-template-columns: 42px 1fr 15px;
-
-    gap: 10px;
-
-    padding: 14px;
-  }
-
-  .flow-list article > span {
-    width: 38px;
-
-    height: 38px;
-  }
-
-  .flow-list h3 {
-    font-size: 13px;
-  }
-
-  .flow-list p {
-    font-size: 10px;
-  }
-
-  .customer-video-card {
-    padding: 13px;
-
-    border-radius: 15px;
-  }
-
-  .video-card-header h3 {
-    font-size: 15px;
-  }
-
-  .video-caption p {
-    font-size: 10px;
-  }
 }
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 380px) {
-
-  .aud-hero h1 {
-    font-size: 35px;
-  }
-
-  .customer-hero-banner {
-    min-height: 480px;
-  }
-
-  .hero-banner-content h2 {
-    font-size: 26px;
-  }
-
-  .banner-card-one {
-    right: 10px;
-  }
-
-  .banner-card-two {
-    right: 30px;
-  }
-}
-
