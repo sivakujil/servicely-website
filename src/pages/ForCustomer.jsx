@@ -1,3 +1,4 @@
+
 import {
   ArrowRight,
   CalendarDays,
@@ -224,7 +225,10 @@ export default function ForCustomer() {
                 </div>
 
                 <div className="video-play-icon">
-                  <Play size={20} fill="currentColor" />
+                  <Play
+                    size={20}
+                    fill="currentColor"
+                  />
                 </div>
 
               </div>
@@ -337,10 +341,14 @@ export default function ForCustomer() {
 
             <div className="customer-app-buttons">
 
-              {/* GOOGLE PLAY */}
+              {/* =================================================
+                  GOOGLE PLAY
+              ================================================= */}
 
               <a
-                href="#"
+                href="https://play.google.com/store/apps/details?id=com.servicely.serviceprovider"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="app-store-button"
                 aria-label="Get it on Google Play"
               >
@@ -376,7 +384,9 @@ export default function ForCustomer() {
               </a>
 
 
-              {/* APP STORE */}
+              {/* =================================================
+                  APP STORE
+              ================================================= */}
 
               <a
                 href="#"
@@ -458,3 +468,4 @@ export default function ForCustomer() {
     </>
   );
 }
+

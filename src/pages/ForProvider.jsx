@@ -1,3 +1,4 @@
+
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -385,10 +386,14 @@ export default function ForProvider() {
 
             <div className="provider-app-buttons">
 
-              {/* GOOGLE PLAY */}
+              {/* =================================================
+                  GOOGLE PLAY
+              ================================================= */}
 
               <a
-                href="#"
+                href="https://play.google.com/store/apps/details?id=com.servicely.serviceprovider"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="provider-app-store-button"
                 aria-label="Get it on Google Play"
               >
@@ -424,7 +429,9 @@ export default function ForProvider() {
               </a>
 
 
-              {/* APP STORE */}
+              {/* =================================================
+                  APP STORE
+              ================================================= */}
 
               <a
                 href="#"
@@ -506,3 +513,4 @@ export default function ForProvider() {
     </>
   );
 }
+
