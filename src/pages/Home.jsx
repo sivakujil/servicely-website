@@ -1,11 +1,15 @@
+
 import {
   ArrowRight,
   ShieldCheck,
   Clock3,
   CreditCard,
-  Wrench,
+  Droplets,
   Zap,
-  Wind,
+  Snowflake,
+  Sparkles,
+  Paintbrush,
+  Hammer,
 } from "lucide-react";
 
 import { useNavigate } from "react-router-dom";
@@ -14,23 +18,55 @@ import Footer from "../components/Footer";
 
 import "./Home.css";
 
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
 const services = [
-  [
-    "Plumbing",
-    "Leak repairs, pipe installation & drain",
-    Wrench,
-  ],
-  [
-    "Electrical",
-    "Wiring, upgrades & safety inspections",
-    Zap,
-  ],
-  [
-    "AC Repair",
-    "Installation, servicing & gas recharging",
-    Wind,
-  ],
+  {
+    name: "Plumbing",
+    text: "Leak repairs, pipe installation & drain solutions",
+    icon: Droplets,
+    className: "plumbing",
+  },
+
+  {
+    name: "Electrical",
+    text: "Wiring, upgrades & electrical safety inspections",
+    icon: Zap,
+    className: "electrical",
+  },
+
+  {
+    name: "AC Repair",
+    text: "Installation, servicing & gas recharging",
+    icon: Snowflake,
+    className: "ac",
+  },
+
+  {
+    name: "Cleaning",
+    text: "Home, office & deep cleaning services",
+    icon: Sparkles,
+    className: "cleaning",
+  },
+
+  {
+    name: "Painting",
+    text: "Interior, exterior & professional painting",
+    icon: Paintbrush,
+    className: "painting",
+  },
+
+  {
+    name: "Carpentry",
+    text: "Furniture, doors & custom woodwork solutions",
+    icon: Hammer,
+    className: "carpentry",
+  },
 ];
+
 
 export default function Home() {
 
@@ -41,7 +77,9 @@ export default function Home() {
 
       <main className="home">
 
-        {/* HERO */}
+        {/* =====================================================
+            HERO
+        ===================================================== */}
 
         <section className="hero">
 
@@ -65,6 +103,9 @@ export default function Home() {
               pay securely.
             </p>
 
+
+            {/* HERO BUTTONS */}
+
             <div className="hero-actions">
 
               <button
@@ -83,6 +124,9 @@ export default function Home() {
               </button>
 
             </div>
+
+
+            {/* STATS */}
 
             <div className="stats">
 
@@ -105,12 +149,19 @@ export default function Home() {
 
           </div>
 
+
+          {/* =====================================================
+              HERO VISUAL
+          ===================================================== */}
+
           <div className="hero-visual">
+
+            {/* REQUEST CARD */}
 
             <div className="request-card">
 
               <span className="small-icon">
-                ✓
+                <ArrowRight size={17} />
               </span>
 
               <b>Book a Service</b>
@@ -129,6 +180,9 @@ export default function Home() {
 
             </div>
 
+
+            {/* PHONE */}
+
             <div className="phone">
 
               <div className="phone-top"></div>
@@ -137,6 +191,7 @@ export default function Home() {
 
               <div className="job active">
                 AC Repair
+
                 <small>
                   Today • 10:00 AM
                 </small>
@@ -144,6 +199,7 @@ export default function Home() {
 
               <div className="job">
                 Plumbing
+
                 <small>
                   Tomorrow
                 </small>
@@ -151,6 +207,7 @@ export default function Home() {
 
               <div className="job done">
                 Painting
+
                 <small>
                   Completed
                 </small>
@@ -162,7 +219,10 @@ export default function Home() {
 
         </section>
 
-        {/* SERVICES */}
+
+        {/* =====================================================
+            SERVICES
+        ===================================================== */}
 
         <section className="offer section">
 
@@ -184,22 +244,55 @@ export default function Home() {
 
           </div>
 
+
+          {/* 6 SERVICE CARDS */}
+
           <div className="service-cards">
 
             {services.map(
-              ([name, text, Icon]) => (
+              ({
+                name,
+                text,
+                icon: Icon,
+                className,
+              }) => (
 
-                <article key={name}>
+                <article
+                  key={name}
+                  className={`service-card ${className}`}
+                >
 
                   <span className="service-icon">
-                    <Icon />
+
+                    <Icon
+                      size={25}
+                      strokeWidth={2}
+                    />
+
                   </span>
 
-                  <h3>{name}</h3>
+                  <div className="service-content">
 
-                  <p>{text}</p>
+                    <h3>
+                      {name}
+                    </h3>
+
+                    <p>
+                      {text}
+                    </p>
+
+                  </div>
+
+                  <button
+                    className="service-arrow"
+                    onClick={() => nav("/services")}
+                    aria-label={`View ${name} services`}
+                  >
+                    <ArrowRight size={16} />
+                  </button>
 
                 </article>
+
               )
             )}
 
@@ -207,7 +300,10 @@ export default function Home() {
 
         </section>
 
-        {/* TRUST */}
+
+        {/* =====================================================
+            TRUST
+        ===================================================== */}
 
         <section className="trust section">
 
@@ -228,7 +324,10 @@ export default function Home() {
 
           </div>
 
+
           <div className="trust-grid">
+
+            {/* VERIFIED */}
 
             <article>
 
@@ -247,6 +346,9 @@ export default function Home() {
 
             </article>
 
+
+            {/* ON TIME */}
+
             <article>
 
               <Clock3 />
@@ -262,6 +364,9 @@ export default function Home() {
               </p>
 
             </article>
+
+
+            {/* PAYMENT */}
 
             <article>
 
@@ -283,7 +388,10 @@ export default function Home() {
 
         </section>
 
-        {/* CTA */}
+
+        {/* =====================================================
+            CTA
+        ===================================================== */}
 
         <section className="ready">
 
@@ -300,6 +408,7 @@ export default function Home() {
 
           </div>
 
+
           <button
             className="white-btn"
             onClick={() => nav("/services")}
@@ -312,8 +421,10 @@ export default function Home() {
 
       </main>
 
+
       <Footer />
 
     </div>
   );
 }
+

@@ -1,120 +1,94 @@
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
-
-import logo from "../assets/logo.jpeg";
-
+import logo from "../assets/logo.png";
 import "./Navbar.css";
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const closeMobile = () => {
-    setMobileOpen(false);
+  const closeMobileMenu = () => {
+    setMenuOpen(false);
   };
 
   return (
     <header className="navbar">
-
       <div className="navbar-container">
 
-        {/* ================= LOGO ================= */}
+        {/* =====================================================
+            LOGO
+        ===================================================== */}
 
         <Link
           to="/"
-          className="navbar-logo"
-          onClick={closeMobile}
+          className="navbar-brand"
+          onClick={closeMobileMenu}
         >
           <img
             src={logo}
             alt="Servicely"
+            className="navbar-logo"
           />
         </Link>
 
 
-        {/* ================= DESKTOP NAV ================= */}
+        {/* =====================================================
+            DESKTOP NAVIGATION
+        ===================================================== */}
 
         <nav className="desktop-nav">
 
-          {/* HOME */}
-
           <NavLink
             to="/"
+            end
             className={({ isActive }) =>
-              isActive
-                ? "nav-link active"
-                : "nav-link"
+              isActive ? "active" : ""
             }
           >
             Home
           </NavLink>
 
-
-          {/* SERVICES */}
-
-          <NavLink
-            to="/services"
-            className={({ isActive }) =>
-              isActive
-                ? "nav-link active"
-                : "nav-link"
-            }
-          >
-            Services
-          </NavLink>
-
-
-          {/* FOR CUSTOMER */}
-
-          <NavLink
-            to="/customer"
-            className={({ isActive }) =>
-              isActive
-                ? "nav-link active"
-                : "nav-link"
-            }
-          >
-            For Customer
-          </NavLink>
-
-
-          {/* FOR PROVIDER */}
-
-          <NavLink
-            to="/provider"
-            className={({ isActive }) =>
-              isActive
-                ? "nav-link active"
-                : "nav-link"
-            }
-          >
-            For Provider
-          </NavLink>
-
-
-          {/* HOW IT WORKS */}
-
           <NavLink
             to="/how-it-works"
             className={({ isActive }) =>
-              isActive
-                ? "nav-link active"
-                : "nav-link"
+              isActive ? "active" : ""
             }
           >
             How It Works
           </NavLink>
 
+          <NavLink
+            to="/for-customer"
+            className={({ isActive }) =>
+              isActive ? "active" : ""
+            }
+          >
+            For Customer
+          </NavLink>
 
-          {/* CONTACT */}
+          <NavLink
+            to="/for-provider"
+            className={({ isActive }) =>
+              isActive ? "active" : ""
+            }
+          >
+            For Provider
+          </NavLink>
+
+          <NavLink
+            to="/services"
+            className={({ isActive }) =>
+              isActive ? "active" : ""
+            }
+          >
+            Services
+          </NavLink>
 
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              isActive
-                ? "nav-link active"
-                : "nav-link"
+              isActive ? "active" : ""
             }
           >
             Contact
@@ -123,12 +97,14 @@ export default function Navbar() {
         </nav>
 
 
-        {/* ================= RIGHT SIDE ================= */}
+        {/* =====================================================
+            DESKTOP CTA
+        ===================================================== */}
 
         <div className="navbar-right">
 
           <Link
-            to="/services"
+            to="/book-service"
             className="navbar-cta"
           >
             Book a Service
@@ -137,124 +113,114 @@ export default function Navbar() {
         </div>
 
 
-        {/* ================= MOBILE BUTTON ================= */}
+        {/* =====================================================
+            MOBILE MENU BUTTON
+        ===================================================== */}
 
         <button
           type="button"
           className="mobile-menu-button"
-          onClick={() =>
-            setMobileOpen(!mobileOpen)
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={
+            menuOpen
+              ? "Close navigation menu"
+              : "Open navigation menu"
           }
-          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
         >
-
-          {mobileOpen ? (
-            <X size={24} />
+          {menuOpen ? (
+            <X size={22} strokeWidth={2} />
           ) : (
-            <Menu size={24} />
+            <Menu size={22} strokeWidth={2} />
           )}
-
         </button>
 
       </div>
 
 
-      {/* ================= MOBILE NAV ================= */}
+      {/* =====================================================
+          MOBILE MENU
+      ===================================================== */}
 
-      {mobileOpen && (
-        <div className="mobile-nav">
+      {menuOpen && (
+        <nav className="mobile-menu">
 
           <NavLink
             to="/"
-            onClick={closeMobile}
+            end
             className={({ isActive }) =>
-              isActive
-                ? "mobile-link active"
-                : "mobile-link"
+              isActive ? "active" : ""
             }
+            onClick={closeMobileMenu}
           >
             Home
           </NavLink>
 
-
-          <NavLink
-            to="/services"
-            onClick={closeMobile}
-            className={({ isActive }) =>
-              isActive
-                ? "mobile-link active"
-                : "mobile-link"
-            }
-          >
-            Services
-          </NavLink>
-
-
-          <NavLink
-            to="/customer"
-            onClick={closeMobile}
-            className={({ isActive }) =>
-              isActive
-                ? "mobile-link active"
-                : "mobile-link"
-            }
-          >
-            For Customer
-          </NavLink>
-
-
-          <NavLink
-            to="/provider"
-            onClick={closeMobile}
-            className={({ isActive }) =>
-              isActive
-                ? "mobile-link active"
-                : "mobile-link"
-            }
-          >
-            For Provider
-          </NavLink>
-
-
           <NavLink
             to="/how-it-works"
-            onClick={closeMobile}
             className={({ isActive }) =>
-              isActive
-                ? "mobile-link active"
-                : "mobile-link"
+              isActive ? "active" : ""
             }
+            onClick={closeMobileMenu}
           >
             How It Works
           </NavLink>
 
+          <NavLink
+            to="/for-customer"
+            className={({ isActive }) =>
+              isActive ? "active" : ""
+            }
+            onClick={closeMobileMenu}
+          >
+            For Customer
+          </NavLink>
+
+          <NavLink
+            to="/for-provider"
+            className={({ isActive }) =>
+              isActive ? "active" : ""
+            }
+            onClick={closeMobileMenu}
+          >
+            For Provider
+          </NavLink>
+
+          <NavLink
+            to="/services"
+            className={({ isActive }) =>
+              isActive ? "active" : ""
+            }
+            onClick={closeMobileMenu}
+          >
+            Services
+          </NavLink>
 
           <NavLink
             to="/contact"
-            onClick={closeMobile}
             className={({ isActive }) =>
-              isActive
-                ? "mobile-link active"
-                : "mobile-link"
+              isActive ? "active" : ""
             }
+            onClick={closeMobileMenu}
           >
             Contact
           </NavLink>
 
 
-          {/* MOBILE CTA */}
+          {/* Mobile CTA */}
 
           <Link
-            to="/services"
-            className="mobile-cta"
-            onClick={closeMobile}
+            to="/book-service"
+            className="navbar-cta"
+            onClick={closeMobileMenu}
           >
             Book a Service
           </Link>
 
-        </div>
+        </nav>
       )}
 
     </header>
   );
 }
+
