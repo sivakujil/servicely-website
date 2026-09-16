@@ -171,7 +171,7 @@ export default function Footer() {
               </span>
 
               <a href="mailto:info@servicely.com">
-                info@servicely.com
+                info@servicely.lk
               </a>
 
             </div>

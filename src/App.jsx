@@ -1,5 +1,4 @@
-
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 
@@ -13,35 +12,61 @@ import Contact from "./pages/Contact";
 export default function App() {
   return (
     <>
-      {/* ================= NAVBAR ================= */}
+      {/* =====================================================
+          NAVBAR
+      ===================================================== */}
       <Navbar />
 
-      {/* ================= ROUTES ================= */}
+      {/* =====================================================
+          ROUTES
+      ===================================================== */}
       <Routes>
-        {/* HOME */}
+
+        {/* ================= HOME ================= */}
         <Route path="/" element={<Home />} />
 
-        {/* SERVICES */}
+        {/* ================= SERVICES ================= */}
         <Route path="/services" element={<Services />} />
 
-        {/* HOW IT WORKS */}
+        {/* ================= HOW IT WORKS ================= */}
         <Route path="/how-it-works" element={<HowItWorks />} />
 
-        {/* FOR CUSTOMER */}
+        {/* ================= FOR CUSTOMER ================= */}
         <Route path="/for-customer" element={<ForCustomer />} />
 
-        {/* FOR PROVIDER */}
+        {/* ================= FOR PROVIDER ================= */}
         <Route path="/for-provider" element={<ForProvider />} />
 
-        {/* CONTACT */}
+        {/* ================= CONTACT ================= */}
         <Route path="/contact" element={<Contact />} />
 
-        {/* OPTIONAL: OLD ROUTES */}
-        {/* These keep old links working too */}
+        {/* =================================================
+            OLD ROUTES
+            Keep these working
+        ================================================= */}
         <Route path="/customer" element={<ForCustomer />} />
         <Route path="/provider" element={<ForProvider />} />
+
+        {/* =================================================
+            BOOK SERVICE
+            If an old button still uses /book-service,
+            send the user to the Services page.
+        ================================================= */}
+        <Route
+          path="/book-service"
+          element={<Navigate to="/services" replace />}
+        />
+
+        {/* =================================================
+            UNKNOWN ROUTES
+            Redirect any invalid URL to Home
+        ================================================= */}
+        <Route
+          path="*"
+          element={<Navigate to="/" replace />}
+        />
+
       </Routes>
     </>
   );
 }
-

@@ -1,4 +1,3 @@
-
 import {
   ArrowRight,
   CalendarDays,
@@ -49,6 +48,9 @@ export default function ForCustomer() {
       Star,
     ],
   ];
+
+  const appLink =
+    "https://play.google.com/store/apps/details?id=com.servicely.serviceprovider";
 
   return (
     <>
@@ -225,10 +227,12 @@ export default function ForCustomer() {
                 </div>
 
                 <div className="video-play-icon">
+
                   <Play
                     size={20}
                     fill="currentColor"
                   />
+
                 </div>
 
               </div>
@@ -328,11 +332,11 @@ export default function ForCustomer() {
           <div className="customer-download-content">
 
             <span className="customer-download-eyebrow">
-              SERVICELY APP
+              SERVICELY  pro APP
             </span>
 
             <h2>
-              Download the <b>Servicely App</b>
+              Download the <b>Servicely  pro App</b>
             </h2>
 
             <p>
@@ -346,7 +350,7 @@ export default function ForCustomer() {
               ================================================= */}
 
               <a
-                href="https://play.google.com/store/apps/details?id=com.servicely.serviceprovider"
+                href={appLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="app-store-button"
@@ -389,7 +393,9 @@ export default function ForCustomer() {
               ================================================= */}
 
               <a
-                href="#"
+                href={appLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="app-store-button"
                 aria-label="Download on the App Store"
               >
@@ -435,7 +441,7 @@ export default function ForCustomer() {
                 <ShieldCheck size={36} />
 
                 <strong>
-                  Servicely
+                  Servicely Pro
                 </strong>
 
                 <span>
@@ -468,4 +474,3 @@ export default function ForCustomer() {
     </>
   );
 }
-

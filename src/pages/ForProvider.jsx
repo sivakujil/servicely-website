@@ -1,4 +1,3 @@
-
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -17,6 +16,9 @@ import "./ForProvider.css";
 
 export default function ForProvider() {
   const nav = useNavigate();
+
+  const appLink =
+    "https://play.google.com/store/apps/details?id=com.servicely.serviceprovider";
 
   const steps = [
     [
@@ -246,7 +248,7 @@ export default function ForProvider() {
 
                 <iframe
                   src="https://www.youtube.com/embed/HQNziXgadPE"
-                  title="Servicely Provider Guide"
+                  title="Servicely Pro Provider Guide"
                   loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
@@ -262,7 +264,7 @@ export default function ForProvider() {
                 </span>
 
                 <p>
-                  Servicely மூலம் provider ஆக
+                  Servicely Pro மூலம் provider ஆக
                   சேவைகளை எளிதாக நிர்வகிப்பது எப்படி
                 </p>
 
@@ -329,7 +331,7 @@ export default function ForProvider() {
 
 
         {/* =====================================================
-            DOWNLOAD APP
+            DOWNLOAD SERVICELY PRO APP
         ===================================================== */}
 
         <section className="provider-download-app">
@@ -343,7 +345,7 @@ export default function ForProvider() {
                 <BriefcaseBusiness size={36} />
 
                 <strong>
-                  Servicely
+                  Servicely Pro
                 </strong>
 
                 <span>
@@ -372,11 +374,11 @@ export default function ForProvider() {
           <div className="provider-download-content">
 
             <span className="provider-download-eyebrow">
-              SERVICELY APP
+              SERVICELY PRO APP
             </span>
 
             <h2>
-              Download the <b>Servicely App</b>
+              Download the <b>Servicely Pro App</b>
             </h2>
 
             <p>
@@ -391,11 +393,11 @@ export default function ForProvider() {
               ================================================= */}
 
               <a
-                href="https://play.google.com/store/apps/details?id=com.servicely.serviceprovider"
+                href={appLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="provider-app-store-button"
-                aria-label="Get it on Google Play"
+                aria-label="Get Servicely Pro on Google Play"
               >
 
                 <div className="provider-app-store-icon">
@@ -434,9 +436,11 @@ export default function ForProvider() {
               ================================================= */}
 
               <a
-                href="#"
+                href={appLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="provider-app-store-button"
-                aria-label="Download on the App Store"
+                aria-label="Download Servicely Pro on the App Store"
               >
 
                 <div className="provider-app-store-icon">
@@ -513,4 +517,3 @@ export default function ForProvider() {
     </>
   );
 }
-

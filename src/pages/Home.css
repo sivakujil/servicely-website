@@ -1,4 +1,3 @@
-
 /* =====================================================
    HOME
 ===================================================== */
@@ -48,9 +47,9 @@
 
   color: #2860d8;
 
-  font-size: 13px;
+  font-size: 12px;
 
-  font-weight: 700;
+  font-weight: 800;
 
   letter-spacing: 0.08em;
 
@@ -63,13 +62,13 @@
 ===================================================== */
 
 .hero h1 {
-  font-size: 62px;
+  font-size: 52px;
 
-  line-height: 1.06;
+  line-height: 1.1;
 
-  letter-spacing: -0.042em;
+  letter-spacing: -0.04em;
 
-  font-weight: 700;
+  font-weight: 800;
 
   margin: 20px 0;
 }
@@ -138,7 +137,9 @@
 }
 
 
-/* PRIMARY */
+/* =====================================================
+   PRIMARY
+===================================================== */
 
 .primary {
   background: #2860d8;
@@ -155,7 +156,9 @@
 }
 
 
-/* SECONDARY */
+/* =====================================================
+   SECONDARY
+===================================================== */
 
 .secondary {
   background: #ffffff;
@@ -419,13 +422,13 @@
 }
 
 .section-heading h2 {
-  font-size: 38px;
+  font-size: 28px;
 
-  line-height: 1.15;
+  line-height: 1.3;
 
-  font-weight: 700;
+  font-weight: 800;
 
-  letter-spacing: -0.032em;
+  letter-spacing: -0.02em;
 
   margin: 16px 0 10px;
 }
@@ -433,9 +436,9 @@
 .section-heading p {
   color: #718096;
 
-  font-size: 15px;
+  font-size: 18px;
 
-  line-height: 1.65;
+  line-height: 1.6;
 
   font-weight: 400;
 
@@ -529,6 +532,7 @@
   color: #1689d8;
 }
 
+
 /* Electrical */
 
 .service-card.electrical .service-icon {
@@ -536,6 +540,7 @@
 
   color: #e5a800;
 }
+
 
 /* AC */
 
@@ -545,6 +550,7 @@
   color: #2996d6;
 }
 
+
 /* Cleaning */
 
 .service-card.cleaning .service-icon {
@@ -553,6 +559,7 @@
   color: #25a878;
 }
 
+
 /* Painting */
 
 .service-card.painting .service-icon {
@@ -560,6 +567,7 @@
 
   color: #9158d8;
 }
+
 
 /* Carpentry */
 
@@ -575,23 +583,23 @@
 ===================================================== */
 
 .service-content h3 {
-  font-size: 18px;
+  font-size: 27px;
 
-  line-height: 1.3;
+  line-height: 1.25;
 
-  font-weight: 700;
+  font-weight: 800;
 
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
 
-  margin: 0 0 8px;
+  margin: 0 0 9px;
 }
 
 .service-content p {
   max-width: 285px;
 
-  font-size: 13px;
+  font-size: 16px;
 
-  line-height: 1.6;
+  line-height: 1.65;
 
   font-weight: 400;
 
@@ -695,17 +703,19 @@
 }
 
 .trust-grid h3 {
-  font-size: 18px;
+  font-size: 27px;
 
-  line-height: 1.3;
+  line-height: 1.25;
 
-  font-weight: 700;
+  font-weight: 800;
+
+  letter-spacing: -0.02em;
 
   margin: 18px 0 9px;
 }
 
 .trust-grid p {
-  font-size: 13px;
+  font-size: 16px;
 
   line-height: 1.65;
 
@@ -752,11 +762,13 @@
 }
 
 .ready h2 {
-  font-size: 29px;
+  font-size: 28px;
 
-  line-height: 1.2;
+  line-height: 1.3;
 
-  font-weight: 700;
+  font-weight: 800;
+
+  letter-spacing: -0.02em;
 
   margin: 0 0 8px;
 }
@@ -766,9 +778,9 @@
 
   color: #dce7ff;
 
-  font-size: 14px;
+  font-size: 16px;
 
-  line-height: 1.5;
+  line-height: 1.65;
 }
 
 
@@ -830,7 +842,7 @@
   }
 
   .hero h1 {
-    font-size: 54px;
+    font-size: 46px;
   }
 
   .service-cards,
@@ -859,9 +871,9 @@
   }
 
   .hero h1 {
-    font-size: 46px;
+    font-size: 38px;
 
-    line-height: 1.08;
+    line-height: 1.15;
   }
 
   .hero-copy > p {
@@ -877,11 +889,11 @@
   }
 
   .section-heading h2 {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .section-heading p {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .section-heading p br {
@@ -942,13 +954,13 @@
   }
 
   .hero h1 {
-    font-size: 39px;
+    font-size: 38px;
 
     letter-spacing: -0.035em;
   }
 
   .hero-copy > p {
-    font-size: 15px;
+    font-size: 16px;
 
     line-height: 1.6;
   }
@@ -968,7 +980,11 @@
   }
 
   .section-heading h2 {
-    font-size: 29px;
+    font-size: 28px;
+  }
+
+  .section-heading p {
+    font-size: 16px;
   }
 
   .service-card {
@@ -976,11 +992,11 @@
   }
 
   .service-content h3 {
-    font-size: 17px;
+    font-size: 27px;
   }
 
   .service-content p {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .ready {
@@ -992,7 +1008,7 @@
   }
 
   .ready h2 {
-    font-size: 25px;
+    font-size: 28px;
   }
 
   .white-btn {
@@ -1008,7 +1024,7 @@
 @media (max-width: 380px) {
 
   .hero h1 {
-    font-size: 35px;
+    font-size: 34px;
   }
 
   .stats {
