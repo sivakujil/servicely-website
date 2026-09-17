@@ -125,7 +125,7 @@ export default function Footer() {
               </span>
 
               <p>
-                Northern Province,
+               No-106/1, Ramanathan Road,Thirunalveely,Jaffna
                 <br />
                 Sri Lanka
               </p>
@@ -149,7 +149,7 @@ export default function Footer() {
               </span>
 
               <a href="tel:+94700000000">
-                +94 70 000 0000
+             +94 701333000
               </a>
 
             </div>
