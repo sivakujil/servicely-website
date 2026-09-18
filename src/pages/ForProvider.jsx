@@ -1,3 +1,4 @@
+
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -10,13 +11,10 @@ import {
   Play,
 } from "lucide-react";
 
-import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import "./ForProvider.css";
 
 export default function ForProvider() {
-  const nav = useNavigate();
-
   const appLink =
     "https://play.google.com/store/apps/details?id=com.servicely.serviceprovider";
 
@@ -81,13 +79,18 @@ export default function ForProvider() {
               reputation with Servicely.
             </p>
 
-            <button
+            {/* GOOGLE PLAY BUTTON */}
+
+            <a
+              href={appLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="provider-primary"
-              onClick={() => nav("/contact")}
+              aria-label="Join as a Provider on Google Play"
             >
               Join as a Provider
               <ArrowRight size={18} />
-            </button>
+            </a>
 
           </div>
 
@@ -500,12 +503,18 @@ export default function ForProvider() {
               who need your skills.
             </p>
 
-            <button
-              onClick={() => nav("/contact")}
+            {/* GOOGLE PLAY BUTTON */}
+
+            <a
+              href={appLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="provider-primary"
+              aria-label="Join as a Provider on Google Play"
             >
               Join as a Provider
               <ArrowRight size={18} />
-            </button>
+            </a>
 
           </div>
 
@@ -517,3 +526,4 @@ export default function ForProvider() {
     </>
   );
 }
+
