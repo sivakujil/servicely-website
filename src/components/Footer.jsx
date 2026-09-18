@@ -125,7 +125,7 @@ export default function Footer() {
               </span>
 
               <p>
-               No-106/1, Ramanathan Road,Thirunalveely,Jaffna
+                No-106/1, Ramanathan Road, Thirunalveely, Jaffna
                 <br />
                 Sri Lanka
               </p>
@@ -148,8 +148,8 @@ export default function Footer() {
                 Phone
               </span>
 
-              <a href="tel:+94700000000">
-             +94 701333000
+              <a href="tel:+94701333000">
+                +94 701333000
               </a>
 
             </div>
@@ -170,7 +170,7 @@ export default function Footer() {
                 Email
               </span>
 
-              <a href="mailto:info@servicely.com">
+              <a href="mailto:info@servicely.lk">
                 info@servicely.lk
               </a>
 
@@ -231,7 +231,7 @@ export default function Footer() {
 
             {/* LinkedIn */}
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/company/northern-engineering-consortium-pvt-ltd/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -243,19 +243,18 @@ export default function Footer() {
 
             {/* Facebook */}
             <a
-              href="https://www.facebook.com/"
+              href="https://web.facebook.com/people/Nec-Nec/pfbid02opFkFRN1XR1EqvFZ5oMuuvZu9vKp1ifaYVhfDweJZnbdY5215uxz1SmpagmTuDD4l/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
               className="social-link facebook"
             >
-              f
             </a>
 
 
             {/* YouTube */}
             <a
-              href="https://www.youtube.com/"
+              href="https://www.youtube.com/channel/UCGxRP1hhdr_yNIvA1Il6GHw"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
@@ -273,4 +272,3 @@ export default function Footer() {
     </footer>
   );
 }
-

@@ -250,7 +250,7 @@ export default function ForProvider() {
               <div className="provider-youtube">
 
                 <iframe
-                  src="https://www.youtube.com/embed/HQNziXgadPE"
+                  src="https://youtu.be/xqdK9DTjvl0?si=K3xBRUwIJRJ0Vrc1"
                   title="Servicely Pro Provider Guide"
                   loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
