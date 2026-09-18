@@ -45,8 +45,35 @@
   margin: 0 auto;
 }
 
+/* =====================================================
+   SEE FULL DETAILS BUTTON
+===================================================== */
+
 .page-hero .primary {
-  margin: 24px auto 0;
+  margin: 26px auto 0;
+
+  padding: 15px 27px;
+
+  min-height: 53px;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  border-radius: 10px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+}
+
+.page-hero .primary svg {
+  width: 18px;
+  height: 18px;
 }
 
 /* =====================================================
@@ -236,12 +263,60 @@
   padding: 0 25px;
 }
 
-.compact h2 {
-  font-size: 28px;
+/* =====================================================
+   READY TO BOOK SECTION
+===================================================== */
 
-  line-height: 1.3;
+.ready {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  background: #2860d8;
+
+  padding: 45px 50px;
+
+  border-radius: 18px;
+
+  box-shadow: 0 12px 30px rgba(40, 96, 216, 0.15);
+}
+
+/* =====================================================
+   READY HEADING
+===================================================== */
+
+.ready h2 {
+  font-size: 42px;
+
+  line-height: 1.2;
 
   font-weight: 800;
+
+  letter-spacing: -0.03em;
+
+  margin: 0 0 10px;
+
+  color: #ffffff;
+}
+
+/* =====================================================
+   READY DESCRIPTION
+===================================================== */
+
+.ready p {
+  margin: 0;
+
+  font-size: 17px;
+
+  line-height: 1.6;
+
+  color: #eaf2ff;
+
+  max-width: 650px;
 }
 
 /* =====================================================
@@ -255,6 +330,21 @@
 
   .page-hero h1 {
     font-size: 46px;
+  }
+
+  /* See Full Details */
+
+  .page-hero .primary {
+    padding: 14px 25px;
+
+    min-height: 51px;
+
+    font-size: 16px;
+  }
+
+  .page-hero .primary svg {
+    width: 17px;
+    height: 17px;
   }
 
   .steps {
@@ -281,6 +371,28 @@
     width: 70px;
     height: 70px;
   }
+
+  /* =================================================
+     READY TO BOOK - TABLET
+  ================================================= */
+
+  .compact {
+    padding: 0 25px;
+  }
+
+  .ready {
+    padding: 40px 38px;
+
+    border-radius: 16px;
+  }
+
+  .ready h2 {
+    font-size: 36px;
+  }
+
+  .ready p {
+    font-size: 16px;
+  }
 }
 
 /* =====================================================
@@ -304,8 +416,23 @@
     line-height: 1.55;
   }
 
+  /* See Full Details */
+
   .page-hero .primary {
     margin-top: 20px;
+
+    padding: 14px 23px;
+
+    min-height: 50px;
+
+    font-size: 16px;
+
+    border-radius: 9px;
+  }
+
+  .page-hero .primary svg {
+    width: 17px;
+    height: 17px;
   }
 
   .steps {
@@ -367,14 +494,46 @@
     height: calc(100% - 65px);
   }
 
+  /* =================================================
+     READY TO BOOK - MOBILE
+  ================================================= */
+
   .compact {
     margin-bottom: 45px;
 
     padding: 0 18px;
   }
 
-  .compact h2 {
-    font-size: 24px;
+  .ready {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: flex-start;
+
+    gap: 20px;
+
+    padding: 35px 25px;
+
+    border-radius: 15px;
+  }
+
+  .ready h2 {
+    font-size: 31px;
+
+    line-height: 1.25;
+
+    margin-bottom: 9px;
+
+    color: #ffffff;
+  }
+
+  .ready p {
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    color: #eaf2ff;
   }
 }
 
@@ -388,6 +547,16 @@
   }
 
   .page-hero p {
+    font-size: 15px;
+  }
+
+  /* See Full Details */
+
+  .page-hero .primary {
+    padding: 13px 21px;
+
+    min-height: 48px;
+
     font-size: 15px;
   }
 
@@ -414,5 +583,29 @@
 
   .connector {
     left: 23px;
+  }
+
+  /* =================================================
+     READY TO BOOK - SMALL MOBILE
+  ================================================= */
+
+  .ready {
+    padding: 30px 21px;
+
+    border-radius: 14px;
+  }
+
+  .ready h2 {
+    font-size: 28px;
+
+    line-height: 1.3;
+
+    color: #ffffff;
+  }
+
+  .ready p {
+    font-size: 14px;
+
+    color: #eaf2ff;
   }
 }

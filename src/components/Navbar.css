@@ -433,3 +433,273 @@
   }
 }
 
+/* =====================================================
+   NAV BUTTON
+===================================================== */
+
+.nav-button {
+  background: none;
+  border: none;
+  padding: 0;
+
+  font: inherit;
+  color: inherit;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.nav-button:hover {
+  color: #2860d8;
+}
+
+
+/* =====================================================
+   CUSTOMER POPUP OVERLAY
+===================================================== */
+
+.customer-popup-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  background: rgba(15, 31, 55, 0.55);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  backdrop-filter: blur(4px);
+}
+
+
+/* =====================================================
+   CUSTOMER POPUP
+===================================================== */
+
+.customer-popup {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 470px;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  padding: 42px 38px 35px;
+
+  text-align: center;
+
+  box-shadow: 0 25px 70px rgba(15, 42, 80, 0.22);
+
+  animation: customerPopupIn 0.25s ease;
+}
+
+
+/* =====================================================
+   POPUP ANIMATION
+===================================================== */
+
+@keyframes customerPopupIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(15px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =====================================================
+   POPUP CLOSE BUTTON
+===================================================== */
+
+.customer-popup-close {
+  position: absolute;
+
+  top: 15px;
+
+  right: 15px;
+
+  width: 36px;
+
+  height: 36px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #f1f5f9;
+
+  color: #64748b;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.customer-popup-close:hover {
+  background: #e2e8f0;
+
+  color: #1e293b;
+}
+
+
+/* =====================================================
+   POPUP ICON
+===================================================== */
+
+.customer-popup-icon {
+  width: 72px;
+
+  height: 72px;
+
+  margin: 0 auto 20px;
+
+  border-radius: 50%;
+
+  background: #eaf3ff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.customer-popup-icon span {
+  font-size: 32px;
+}
+
+
+/* =====================================================
+   POPUP HEADING
+===================================================== */
+
+.customer-popup h2 {
+  margin: 0 0 12px;
+
+  font-size: 28px;
+
+  line-height: 1.25;
+
+  font-weight: 800;
+
+  color: #111827;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* =====================================================
+   POPUP DESCRIPTION
+===================================================== */
+
+.customer-popup p {
+  margin: 0 auto;
+
+  max-width: 390px;
+
+  font-size: 16px;
+
+  line-height: 1.65;
+
+  color: #718096;
+}
+
+
+/* =====================================================
+   POPUP BUTTON
+===================================================== */
+
+.customer-popup-button {
+  margin-top: 25px;
+
+  padding: 13px 28px;
+
+  min-height: 48px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #2860d8;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.customer-popup-button:hover {
+  background: #1f50b8;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   MOBILE POPUP
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .customer-popup {
+    max-width: 100%;
+
+    padding: 38px 24px 30px;
+
+    border-radius: 17px;
+  }
+
+  .customer-popup-icon {
+    width: 64px;
+
+    height: 64px;
+
+    margin-bottom: 17px;
+  }
+
+  .customer-popup-icon span {
+    font-size: 28px;
+  }
+
+  .customer-popup h2 {
+    font-size: 24px;
+  }
+
+  .customer-popup p {
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+
+  .customer-popup-button {
+    width: 100%;
+  }
+}

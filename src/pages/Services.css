@@ -7,6 +7,7 @@
   background: #f7fbff;
 }
 
+
 /* =====================================================
    SERVICES HEADER
 ===================================================== */
@@ -36,6 +37,7 @@
   line-height: 1.65;
 }
 
+
 /* =====================================================
    SEARCH
 ===================================================== */
@@ -47,23 +49,38 @@
   border: 1px solid #dfe6ef;
   background: #fff;
   border-radius: 16px;
+
   display: flex;
   align-items: center;
   gap: 15px;
+
   padding: 0 22px;
+
   box-shadow: 0 10px 25px #173e7710;
+  box-sizing: border-box;
 }
 
 .search svg {
   color: #758195;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 .search input {
   border: 0;
   outline: 0;
   width: 100%;
+
   font-size: 15px;
+  color: #1a2435;
+  background: transparent;
 }
+
+.search input::placeholder {
+  color: #8a95a5;
+}
+
 
 /* =====================================================
    CATALOG
@@ -72,16 +89,22 @@
 .catalog {
   max-width: 1344px;
   margin: auto;
+
   padding: 100px 48px;
+
   display: grid;
   grid-template-columns: 1.4fr 0.95fr;
   gap: 40px;
+
+  box-sizing: border-box;
 }
 
 .count {
   color: #6c788a;
   font-size: 13px;
+  margin: 0 0 18px;
 }
+
 
 /* =====================================================
    SERVICE GRID
@@ -95,12 +118,31 @@
 
 .service-tile {
   text-align: left;
+
   background: #fff;
   border: 1px solid #e0e7f0;
   border-radius: 16px;
+
   padding: 24px;
   min-height: 190px;
+
   cursor: pointer;
+
+  font-family: inherit;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  box-sizing: border-box;
+}
+
+.service-tile:hover {
+  border-color: #b9cce9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px #173e7710;
 }
 
 .service-tile.selected {
@@ -111,12 +153,23 @@
 .service-tile > span {
   width: 54px;
   height: 54px;
+
   border-radius: 14px;
+
   background: #eff6ff;
   color: #4781e0;
+
   display: grid;
   place-items: center;
+
   margin-bottom: 17px;
+
+  box-sizing: border-box;
+}
+
+.service-tile > span svg {
+  width: 23px;
+  height: 23px;
 }
 
 .service-tile b,
@@ -129,25 +182,32 @@
   font-size: 16px;
   line-height: 1.3;
   font-weight: 750;
+
+  color: #1a2435;
 }
 
 .service-tile small {
   color: #708096;
   font-size: 12px;
   line-height: 1.45;
+
   margin-top: 7px;
 }
 
 .service-tile em {
   font-style: normal;
+
   color: #2860d8;
   font-size: 12px;
   font-weight: 800;
+
   margin-top: 17px;
+
   display: flex;
   gap: 4px;
   align-items: center;
 }
+
 
 /* =====================================================
    SERVICE DETAIL
@@ -155,22 +215,33 @@
 
 .service-detail {
   background: #eaf5ff;
+
   border: 1px solid #d7e7f7;
   border-radius: 20px;
+
   padding: 35px;
+
   align-self: start;
+
   position: sticky;
   top: 105px;
+
+  box-sizing: border-box;
 }
 
 .detail-icon {
   width: 75px;
   height: 75px;
+
   border-radius: 17px;
+
   background: #fff;
+
   display: grid;
   place-items: center;
+
   color: #4781e0;
+
   margin-bottom: 20px;
 }
 
@@ -180,8 +251,11 @@
 }
 
 .service-detail > small {
+  display: block;
+
   font-size: 12px;
   color: #5381d5;
+
   font-weight: 800;
   letter-spacing: 0.08em;
 }
@@ -189,65 +263,172 @@
 .service-detail h2 {
   font-size: 28px;
   line-height: 1.3;
+
   letter-spacing: -0.02em;
   font-weight: 800;
+
   margin: 8px 0 15px;
+
+  color: #1a2435;
 }
 
 .service-detail > p {
   color: #4f5e72;
+
   font-size: 16px;
   line-height: 1.65;
+
+  margin: 0;
 }
+
+
+/* =====================================================
+   DETAIL META
+===================================================== */
 
 .detail-meta {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   gap: 12px;
+
   margin: 28px 0;
 }
 
 .detail-meta div {
   background: #fff;
+
   border-radius: 12px;
+
   padding: 15px;
+
   display: flex;
+  align-items: flex-start;
+
   gap: 9px;
+
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .detail-meta svg {
   color: #5184df;
+
   width: 19px;
+  height: 19px;
+
+  flex-shrink: 0;
 }
 
 .detail-meta span {
   font-size: 10px;
   line-height: 1.4;
+
   color: #788496;
   font-weight: 800;
+
+  min-width: 0;
 }
 
 .detail-meta b {
   display: block;
+
   font-size: 12px;
   line-height: 1.3;
+
   color: #1a2435;
+
   margin-top: 5px;
 }
 
+
+/* =====================================================
+   BOOK BUTTON
+===================================================== */
+
 .service-detail .primary {
   width: 100%;
+  min-height: 52px;
+
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
   justify-content: center;
+
+  gap: 10px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #2860d8;
+  color: #fff;
+
+  font-family: inherit;
+
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
+
+.service-detail .primary svg {
+  width: 17px;
+  height: 17px;
+
+  flex-shrink: 0;
+}
+
+.service-detail .primary:hover {
+  background: #1f50bd;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 7px 18px #2860d830;
+}
+
 
 /* =====================================================
    TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .catalog {
+    grid-template-columns: 1.2fr 0.9fr;
+    gap: 28px;
+
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-detail {
+    padding: 30px;
+  }
+}
+
+
+/* =====================================================
+   TABLET / SMALL LAPTOP
 ===================================================== */
 
 @media (max-width: 950px) {
 
   .catalog {
     grid-template-columns: 1fr;
+
     padding: 70px 22px;
   }
 
@@ -257,14 +438,21 @@
 
   .service-detail {
     position: static;
+
+    width: 100%;
   }
 }
+
 
 /* =====================================================
    MOBILE
 ===================================================== */
 
 @media (max-width: 550px) {
+
+  .services-head {
+    padding: 60px 18px 65px;
+  }
 
   .services-head h1 {
     font-size: 38px;
@@ -274,8 +462,39 @@
     font-size: 16px;
   }
 
+  .search {
+    height: 60px;
+
+    margin-top: 30px;
+
+    padding: 0 18px;
+
+    border-radius: 14px;
+  }
+
+  .catalog {
+    padding: 55px 18px;
+  }
+
   .service-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .service-tile {
+    min-height: 180px;
+    padding: 22px;
+  }
+
+  .service-detail {
+    padding: 25px;
+
+    border-radius: 18px;
+  }
+
+  .detail-icon {
+    width: 68px;
+    height: 68px;
   }
 
   .service-detail h2 {
@@ -285,13 +504,32 @@
   .service-detail > p {
     font-size: 15px;
   }
+
+  .detail-meta {
+    gap: 10px;
+    margin: 24px 0;
+  }
+
+  .detail-meta div {
+    padding: 13px;
+  }
+
+  .service-detail .primary {
+    min-height: 52px;
+    font-size: 15px;
+  }
 }
+
 
 /* =====================================================
    SMALL MOBILE
 ===================================================== */
 
 @media (max-width: 400px) {
+
+  .services-head {
+    padding: 52px 16px 58px;
+  }
 
   .services-head h1 {
     font-size: 34px;
@@ -301,11 +539,32 @@
     font-size: 15px;
   }
 
+  .catalog {
+    padding: 48px 14px;
+  }
+
+  .service-tile {
+    padding: 20px;
+  }
+
+  .service-detail {
+    padding: 22px;
+  }
+
   .service-detail h2 {
     font-size: 28px;
   }
 
   .service-detail > p {
+    font-size: 14px;
+  }
+
+  .detail-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail .primary {
+    min-height: 50px;
     font-size: 14px;
   }
 }

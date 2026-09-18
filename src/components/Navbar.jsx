@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
@@ -7,220 +6,279 @@ import "./Navbar.css";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [customerPopup, setCustomerPopup] = useState(false);
 
   const closeMobileMenu = () => {
     setMenuOpen(false);
   };
 
+  const openCustomerPopup = () => {
+    setCustomerPopup(true);
+    setMenuOpen(false);
+  };
+
+  const closeCustomerPopup = () => {
+    setCustomerPopup(false);
+  };
+
   return (
-    <header className="navbar">
-      <div className="navbar-container">
+    <>
+      <header className="navbar">
+        <div className="navbar-container">
 
-        {/* =====================================================
-            LOGO
-        ===================================================== */}
-
-        <Link
-          to="/"
-          className="navbar-brand"
-          onClick={closeMobileMenu}
-        >
-          <img
-            src={logo}
-            alt="Servicely"
-            className="navbar-logo"
-          />
-        </Link>
-
-
-        {/* =====================================================
-            DESKTOP NAVIGATION
-        ===================================================== */}
-
-        <nav className="desktop-nav">
-
-          <NavLink
-            to="/"
-            end
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-          >
-            Home
-          </NavLink>
-
-          <NavLink
-            to="/how-it-works"
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-          >
-            How It Works
-          </NavLink>
-
-          <NavLink
-            to="/for-customer"
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-          >
-            For Customer
-          </NavLink>
-
-          <NavLink
-            to="/for-provider"
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-          >
-            For Provider
-          </NavLink>
-
-          <NavLink
-            to="/services"
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-          >
-            Services
-          </NavLink>
-
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-          >
-            Contact
-          </NavLink>
-
-        </nav>
-
-
-        {/* =====================================================
-            DESKTOP CTA
-        ===================================================== */}
-
-        <div className="navbar-right">
+          {/* =====================================================
+              LOGO
+          ===================================================== */}
 
           <Link
-            to="/book-service"
-            className="navbar-cta"
+            to="/"
+            className="navbar-brand"
+            onClick={closeMobileMenu}
           >
-            Book a Service
+            <img
+              src={logo}
+              alt="Servicely"
+              className="navbar-logo"
+            />
           </Link>
+
+
+          {/* =====================================================
+              DESKTOP NAVIGATION
+          ===================================================== */}
+
+          <nav className="desktop-nav">
+
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) =>
+                isActive ? "active" : ""
+              }
+            >
+              Home
+            </NavLink>
+
+            <NavLink
+              to="/how-it-works"
+              className={({ isActive }) =>
+                isActive ? "active" : ""
+              }
+            >
+              How It Works
+            </NavLink>
+
+            {/* FOR CUSTOMER - POPUP */}
+            <button
+              type="button"
+              className="nav-button"
+              onClick={openCustomerPopup}
+            >
+              For Customer
+            </button>
+
+            <NavLink
+              to="/for-provider"
+              className={({ isActive }) =>
+                isActive ? "active" : ""
+              }
+            >
+              For Provider
+            </NavLink>
+
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                isActive ? "active" : ""
+              }
+            >
+              Services
+            </NavLink>
+
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive ? "active" : ""
+              }
+            >
+              Contact
+            </NavLink>
+
+          </nav>
+
+
+          {/* =====================================================
+              DESKTOP CTA
+          ===================================================== */}
+
+          <div className="navbar-right">
+
+            <Link
+              to="/book-service"
+              className="navbar-cta"
+            >
+              Book a Service
+            </Link>
+
+          </div>
+
+
+          {/* =====================================================
+              MOBILE MENU BUTTON
+          ===================================================== */}
+
+          <button
+            type="button"
+            className="mobile-menu-button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={
+              menuOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+            }
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? (
+              <X size={22} strokeWidth={2} />
+            ) : (
+              <Menu size={22} strokeWidth={2} />
+            )}
+          </button>
 
         </div>
 
 
         {/* =====================================================
-            MOBILE MENU BUTTON
+            MOBILE MENU
         ===================================================== */}
 
-        <button
-          type="button"
-          className="mobile-menu-button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={
-            menuOpen
-              ? "Close navigation menu"
-              : "Open navigation menu"
-          }
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? (
-            <X size={22} strokeWidth={2} />
-          ) : (
-            <Menu size={22} strokeWidth={2} />
-          )}
-        </button>
+        {menuOpen && (
+          <nav className="mobile-menu">
 
-      </div>
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) =>
+                isActive ? "active" : ""
+              }
+              onClick={closeMobileMenu}
+            >
+              Home
+            </NavLink>
+
+            <NavLink
+              to="/how-it-works"
+              className={({ isActive }) =>
+                isActive ? "active" : ""
+              }
+              onClick={closeMobileMenu}
+            >
+              How It Works
+            </NavLink>
+
+            {/* FOR CUSTOMER - POPUP */}
+            <button
+              type="button"
+              className="nav-button"
+              onClick={openCustomerPopup}
+            >
+              For Customer
+            </button>
+
+            <NavLink
+              to="/for-provider"
+              className={({ isActive }) =>
+                isActive ? "active" : ""
+              }
+              onClick={closeMobileMenu}
+            >
+              For Provider
+            </NavLink>
+
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                isActive ? "active" : ""
+              }
+              onClick={closeMobileMenu}
+            >
+              Services
+            </NavLink>
+
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive ? "active" : ""
+              }
+              onClick={closeMobileMenu}
+            >
+              Contact
+            </NavLink>
+
+
+            {/* Mobile CTA */}
+
+            <Link
+              to="/book-service"
+              className="navbar-cta"
+              onClick={closeMobileMenu}
+            >
+              Book a Service
+            </Link>
+
+          </nav>
+        )}
+
+      </header>
 
 
       {/* =====================================================
-          MOBILE MENU
+          CUSTOMER COMING SOON POPUP
       ===================================================== */}
 
-      {menuOpen && (
-        <nav className="mobile-menu">
-
-          <NavLink
-            to="/"
-            end
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-            onClick={closeMobileMenu}
+      {customerPopup && (
+        <div
+          className="customer-popup-overlay"
+          onClick={closeCustomerPopup}
+        >
+          <div
+            className="customer-popup"
+            onClick={(e) => e.stopPropagation()}
           >
-            Home
-          </NavLink>
 
-          <NavLink
-            to="/how-it-works"
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-            onClick={closeMobileMenu}
-          >
-            How It Works
-          </NavLink>
+            <button
+              type="button"
+              className="customer-popup-close"
+              onClick={closeCustomerPopup}
+              aria-label="Close popup"
+            >
+              <X size={20} />
+            </button>
 
-          <NavLink
-            to="/for-customer"
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-            onClick={closeMobileMenu}
-          >
-            For Customer
-          </NavLink>
+            <div className="customer-popup-icon">
+              <span>🚀</span>
+            </div>
 
-          <NavLink
-            to="/for-provider"
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-            onClick={closeMobileMenu}
-          >
-            For Provider
-          </NavLink>
+            <h2>Customer App Coming Soon</h2>
 
-          <NavLink
-            to="/services"
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-            onClick={closeMobileMenu}
-          >
-            Services
-          </NavLink>
+            <p>
+              Our customer application is currently under
+              development. We are working to bring you a
+              simple and convenient way to book services.
+            </p>
 
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-            onClick={closeMobileMenu}
-          >
-            Contact
-          </NavLink>
+            <button
+              type="button"
+              className="customer-popup-button"
+              onClick={closeCustomerPopup}
+            >
+              Got It
+            </button>
 
-
-          {/* Mobile CTA */}
-
-          <Link
-            to="/book-service"
-            className="navbar-cta"
-            onClick={closeMobileMenu}
-          >
-            Book a Service
-          </Link>
-
-        </nav>
+          </div>
+        </div>
       )}
 
-    </header>
+    </>
   );
 }
-
